@@ -1,0 +1,27 @@
+.statistic-header{
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  border-top: 1px solid #E5E5E5;
+  border-bottom: 1px solid #E5E5E5;
+  margin-bottom: 22px;
+  .item{
+    font-family: 'PoppinsSemiBold',sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: -0.02em;
+    color: #333333;
+    margin-right: 32px;
+    span{
+      font-family: 'PoppinsRegular',sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 21px;
+      letter-spacing: -0.02em;
+      color: #556EE6;
+    }
+  }
+}

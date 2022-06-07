@@ -1,0 +1,105 @@
+.tabs-main{
+  width: 100%;
+  max-width: 1593px;
+  display: flex;
+  margin: auto;
+  margin-bottom: 28px;
+  margin-top: 17px;
+  padding: 0 10px;
+  .content{
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid rgba(196, 196, 196, 1);
+    justify-content: space-between;
+    .tabs{
+      display: flex;
+      width: fit-content;
+      .item{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 152px;
+        height: 46px;
+        font-family: 'PoppinsRegular',sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+        letter-spacing: -0.02em;
+        color: #666666;
+        margin-bottom: 1px;
+        border-radius: 4px;
+        &.active{
+          background-color: rgba(85, 110, 230, 1);
+          color: #ffffff;
+        }
+        img{
+          margin-right: 12px;
+        }
+      }
+    }
+    .filter{
+      display: flex;
+      width: fit-content;
+      align-items: center;
+      .label{
+        font-family: 'PoppinsRegular',sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+        letter-spacing: -0.02em;
+        color: #666666;
+        margin-bottom: 0;
+        margin-right: 11px;
+      }
+      .select{
+        margin-right: 9px;
+        position: relative;
+        top: 3px;
+        .MuiSvgIcon-root{
+          right: 3px;
+          top: calc(50% - 13px);
+        }
+        legend{
+          display: none;
+        }
+        .MuiBox-root{
+          min-width: 50px;
+          .MuiSelect-select{
+            padding: 2.5px 7px;
+            font-family: 'PoppinsSemiBold',sans-serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 21px;
+            letter-spacing: -0.02em;
+            color: #666666;
+            legend{
+              display: none !important;
+            }
+          }
+        }
+      }
+      .customiseButton{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 122px;
+        height: 30px;
+        font-family: 'PoppinsRegular',sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 21px;
+        letter-spacing: -0.02em;
+        color: #666666;
+        border: 1px solid #CDD2E1;
+        border-radius: 4px;
+        img{
+          margin-right: 9px;
+        }
+      }
+    }
+  }
+}
