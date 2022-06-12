@@ -2,12 +2,12 @@ import React from 'react';
 import Collections from "./pages/collections";
 import Header from "./components/header";
 import Footer from "./components/footer";
-import Test from "./pages/test/test";
+import Popup from "./components/popup";
 
 const App = () => {
     return (
         <div>
-            {/*<Test/>*/}
+            <Popup/>
             <Header/>
             <Collections/>
             <Footer/>

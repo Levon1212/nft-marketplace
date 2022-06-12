@@ -1,0 +1,182 @@
+.search{
+  display: flex;
+  width: 100%;
+  max-width: 657px;
+  position: relative;
+  padding-right: 38px;
+  min-width: 534px;
+  div:first-child{
+    display: flex;
+    width: 100%;
+  }
+  .closeButton{
+    background: none;
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    right: 55px;
+    top: 10px;
+    cursor: pointer;
+  }
+  input{
+    width: 100%;
+    max-width: 657px;
+    height: 44px;
+    background: #F2F5FA;
+    border-radius: 4px;
+    text-indent: 20px;
+    border: none;
+    overflow: hidden;
+    outline: none;
+    &::placeholder{
+      font-family: 'PoppinsRegular',sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 21px;
+      letter-spacing: -0.02em;
+      color: #666666;
+    }
+    &.focusedSearch{
+      border:1px solid rgba(85, 110, 230, 1);
+    }
+  }
+  .searchDropdown{
+    display: flex;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    max-width: calc(100% - 38px);
+    max-height: 700px;
+    overflow: auto;
+    flex-direction: column;
+    z-index: 3;
+    background: #FFFFFF;
+    border: 1px solid #EEF3F6;
+    border-radius: 4px;
+    padding-top: 18px;
+    .searchTitle{
+      font-family: 'PoppinsRegular',sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 20px;
+      letter-spacing: -0.02em;
+      color: #A1A1A1;
+      margin-bottom: 12px;
+      padding-left: 23px;
+      img{
+        margin-right: 6px;
+        width: 13px;
+      }
+    }
+    .item{
+      display: flex;
+      width: 100%;
+      margin-bottom: 22px;
+      padding-left: 23px;
+      cursor: pointer;
+      justify-content: space-between;
+      .wrapper{
+        display: flex;
+        .image{
+          position: relative;
+          width: fit-content;
+          img{
+            width: 46px;
+            height: auto;
+            object-fit: cover;
+            border-radius: 100%;
+
+          }
+          &.checked:after{
+            content: ' ';
+            position: absolute;
+            right: -7px;
+            bottom: -3px;
+            width: 13px;
+            height: 13px;
+            background-image: url("../../../assets/images/icons/star-approved.png");
+            background-repeat: no-repeat;
+            background-position: center;
+          }
+        }
+        .des{
+          display: flex;
+          flex-direction: column;
+          margin-left: 11px;
+          .title{
+            font-family: 'PoppinsRegular',sans-serif;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: -0.02em;
+            color: #666666;
+          }
+          .ad{
+            display: flex;
+            .column{
+              display: flex;
+              align-items: center;
+              padding-right: 17px;
+              width: fit-content;
+              white-space: nowrap;
+              img{
+                margin: 0 3px;
+                width: fit-content;
+              }
+              p{
+                font-family: 'PoppinsRegular',sans-serif;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 11px;
+                line-height: 16px;
+                letter-spacing: -0.02em;
+                color: #A1A1A1;
+                display: flex;
+                align-items: center;
+                span{
+                  font-family: 'PoppinsRegular',sans-serif;
+                  font-style: normal;
+                  font-weight: 500;
+                  font-size: 11px;
+                  line-height: 16px;
+                  letter-spacing: -0.02em;
+                  color: #666666;
+                }
+              }
+            }
+
+          }
+        }
+      }
+      .closeButtonWrapper{
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+        span{
+          font-family: 'PoppinsRegular',sans-serif;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 21px;
+          letter-spacing: -0.02em;
+          color: #A1A1A1;
+        }
+        .closeButtonItem{
+          background: none;
+          margin-left: 20px;
+          position: relative;
+          bottom: 2px;
+        }
+      }
+    }
+    .borderLine{
+      width: 100%;
+      border: 1px solid #EEF3F6;
+      margin-bottom: 10px;
+    }
+  }
+}

@@ -19,21 +19,19 @@ import TabsMain from "../../components/tabs-main"
 import StatisticHeader from "../../components/statistic-header";
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
-import TextField from '@mui/material/TextField';
-import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { StaticDatePicker } from '@mui/x-date-pickers/StaticDatePicker';
 import OutsideClickHandler from 'react-outside-click-handler';
 import { ScrollSync, ScrollSyncPane } from 'react-scroll-sync';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 
 
 const Collections = () => {
-    const [value, setValue] = React.useState(new Date());
     const [datePickerOpen, setDatePickerOpen] = React.useState(false);
     const [scrollPosition, setScrollPosition] = React.useState(0);
     const [positionTop, setPositionTop] = React.useState(1000);
     const [elMaxWidth, setElMaxWidth] = React.useState(500);
+    const [startDate, setStartDate] = useState(new Date());
     useEffect(()=>{
         let elem = document.querySelector('.collectionsItemsTable').getBoundingClientRect()
         setPositionTop(elem.top)
@@ -41,12 +39,12 @@ const Collections = () => {
         window.addEventListener('scroll', ()=>setScrollPosition( window.pageYOffset));
         console.log('elem',elem);
     },[])
-    useEffect(()=>{
-
-    })
+    const toggle = () => {
+        this.component.setOpen(this.focus);
+        this.focus = !this.focus;
+    }
     return (
         <div className='collections-page'>
-            {console.log(scrollPosition,positionTop)}
             <StatisticHeader/>
             <div className="main-container">
                 <p className='title'>
@@ -87,7 +85,7 @@ const Collections = () => {
                     Clear All Filters
                 </div>
             </div>
-            <div className="main-container my-3 align-items-center">
+            <div className="main-container my-3 align-items-center with-datepicker">
                 <div className="time-button">
                     1Min
                 </div>
@@ -127,30 +125,10 @@ const Collections = () => {
                 <div className="time-button">
                     12 Months
                 </div>
-                <OutsideClickHandler
-                    onOutsideClick={() => {setDatePickerOpen(false)}}
-                >
-                    <div className="date-picker-label" onClick={()=>setDatePickerOpen(true)}>
-                        <img src={datePickerIcon} alt=""/>
-                        Today, November 24
-                        {
-                            datePickerOpen ? <div className="datePickerWrapper">
-                                <LocalizationProvider dateAdapter={AdapterDateFns}>
-                                    <StaticDatePicker
-                                        displayStaticWrapperAs="desktop"
-                                        label="Week picker"
-                                        value={value}
-                                        onChange={(newValue) => {
-                                            setValue(newValue);
-                                        }}
-                                        renderInput={(params) => <TextField {...params} />}
-                                        inputFormat="'Week of' MMM d"
-                                    />
-                                </LocalizationProvider>
-                            </div> : ''
-                        }
-                    </div>
-                </OutsideClickHandler>
+                <DatePicker className="date-picker-label"
+                            selected={startDate}
+                            dateFormat="MMM dd"
+                            onChange={(date) => setStartDate(date)} />
             </div>
             <div className="main-container">
                 <div className="filter-button">
