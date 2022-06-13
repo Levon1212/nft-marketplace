@@ -23,6 +23,7 @@ import OutsideClickHandler from 'react-outside-click-handler';
 import { ScrollSync, ScrollSyncPane } from 'react-scroll-sync';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import Popover from "../../components/popover";
 
 
 
@@ -156,21 +157,24 @@ const Collections = () => {
                 <div className="filter-button info">
                     <img src={mintingIcon} className='icon' alt="star icon"/>
                     Minting Now
-                    <div className="info-container">
+                    <div className="info-container info-popover">
+                        <Popover/>
                         <img src={vector3} alt="minting icon"/>
                     </div>
                 </div>
                 <div className="filter-button info">
                     <img src={newMinths} className='icon' alt="star icon"/>
                     New Mints
-                    <div className="info-container">
+                    <div className="info-container info-popover">
+                        <Popover/>
                         <img src={vector3} alt="minting icon"/>
                     </div>
                 </div>
                 <div className="filter-button info">
                     <img src={nextCheap} className='icon' alt="star icon"/>
                     Next Blue Chip
-                    <div className="info-container">
+                    <div className="info-container info-popover">
+                        <Popover/>
                         <img src={vector3} alt="minting icon"/>
                     </div>
                 </div>
@@ -211,7 +215,10 @@ const Collections = () => {
                                                     <div className="title d-flex align-items-center">
                                                         Status
                                                         <img src={vector2} className="icon" alt="icon"/>
-                                                        <img src={vector3} className="icon" alt="icon"/>
+                                                        <div className='info-popover'>
+                                                            <img src={vector3} className="icon" alt="icon"/>
+                                                            <Popover/>
+                                                        </div>
                                                     </div>
                                                 </th>
                                                 <th>

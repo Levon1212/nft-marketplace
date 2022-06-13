@@ -7,7 +7,7 @@ import Popup from "./components/popup";
 const App = () => {
     return (
         <div>
-            <Popup/>
+            {/*<Popup/>*/}
             <Header/>
             <Collections/>
             <Footer/>

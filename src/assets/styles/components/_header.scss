@@ -20,6 +20,7 @@
     color: #666666;
     margin-right: 32px;
     white-space: nowrap;
+    display: none;
   }
   .lang{
     font-family: 'PoppinsRegular',sans-serif;
@@ -32,9 +33,13 @@
     margin-right: 8px;
     margin-left: 26px;
     position: relative;
+    cursor: pointer;
     img{
       margin-left: 10px;
     }
+  }
+  .loginButton{
+    position: relative;
   }
 }
 .langSelect{

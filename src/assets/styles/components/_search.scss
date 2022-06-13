@@ -180,3 +180,52 @@
     }
   }
 }
+.info-popover{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover .popoverContainer{
+    display: flex;
+  }
+  .popoverContainer{
+    display: none;
+    position: absolute;
+    top: 2px;
+    min-width: fit-content;
+    background-color: unset;
+    padding-top: 44px;
+    z-index: 2000;
+    left: 0;
+    .wrapper{
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      min-width: 379px;
+      max-width: 379px;
+      height: 120px;
+      background: #FFFFFF;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
+      p{
+        font-family: 'PoppinsRegular',sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        color: #9CA9B7;
+      }
+      a{
+        display: flex;
+        text-decoration: none;
+        margin-top: 13px;
+        font-family: 'PoppinsRegular',sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        color: #556EE6;
+      }
+    }
+  }
+}

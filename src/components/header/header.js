@@ -4,10 +4,13 @@ import vectorDown from '../../assets/images/icons/vector-down.svg'
 import settingsIcon from '../../assets/images/icons/settings-icon.svg'
 import OutsideClickHandler from 'react-outside-click-handler';
 import Search from "../search";
+import LoginPopup from "../login-popup";
 
 const Header = () => {
     const [langPopup,setLangPopup] = useState(false);
+    const [loginPopUpOpen,setLoginPopUpOpen] = useState(false);
     const [lang,setLang] = useState('EN');
+
     useEffect(()=>{
        setLangPopup(false)
     },[lang])
@@ -55,8 +58,11 @@ const Header = () => {
                     USD
                 </div>
                 <img src={vectorDown} alt=""/>
-                <div className="lang">
-                    Login
+                <div className="lang loginButton" >
+                    <span onClick={()=> {
+                        setLoginPopUpOpen(true)
+                    }}>Login</span>
+                    {loginPopUpOpen ? <LoginPopup setLoginPopUpOpen={setLoginPopUpOpen}/> : ''}
                 </div>
                 <div className="subscribe-button">
                     Subscribe
