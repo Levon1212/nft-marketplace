@@ -1,5 +1,6 @@
 import React from 'react';
 import vector1 from '../../assets/images/icons/vector1.png'
+import verifiedIcon from '../../assets/images/icons/verfied-icon.svg'
 
 const CollectionItemRow = () => {
     return (
@@ -51,6 +52,107 @@ const CollectionItemRow = () => {
                     <div className="progress-up">
                         1.01%
                     </div>
+                </div>
+            </td>
+            <td>
+                <div className="d-flex justify-content-center">
+                    <div className="title">4514</div>
+                    <div className="progress-up">1.01%</div>
+                </div>
+            </td>
+            <td>
+                <div className="d-flex justify-content-center">
+                    <div className="title">4514</div>
+                    <div className="progress-up">1.01%</div>
+                </div>
+            </td>
+            <td>
+                <div className="d-flex justify-content-center">
+                    <div className="title">4514</div>
+                    <div className="progress-up">1.01%</div>
+                </div>
+            </td>
+            <td>
+                <div className="d-flex justify-content-center">
+                    <div className="title">2.53</div>
+                </div>
+            </td>
+            <td>
+                <div className="d-flex justify-content-center">
+                    <div className="title">4514</div>
+                    <div className="progress-up">1.01%</div>
+                </div>
+            </td>
+            <td>
+                <div className="d-flex justify-content-center">
+                    <div className="title">4514</div>
+                    <div className="progress-up">1.01%</div>
+                </div>
+            </td>
+            <td>
+                <div className="d-flex justify-content-center">
+                    <div className="title">4514</div>
+                    <div className="progress-up">1.01%</div>
+                </div>
+            </td>
+            <td>
+                <div className="d-flex justify-content-center">
+                    <div className="title">4514</div>
+                    <div className="progress-up">1.01%</div>
+                </div>
+            </td>
+            <td>
+                <div className="title">
+                    <img src={verifiedIcon} alt="icon"/>
+                </div>
+                <div className="date">02-15-2022</div>
+            </td>
+            <td>
+                <div className="d-flex justify-content-center">
+                    <div className="title">4514</div>
+                    <div className="progress-down">1.01%</div>
+                </div>
+            </td>
+            <td>
+                <div className="d-flex justify-content-center">
+                    <div className="title">4514</div>
+                    <div className="progress-down">1.01%</div>
+                </div>
+            </td>
+            <td>
+                <div className="d-flex justify-content-center">
+                    <div className="title">4514</div>
+                    <div className="progress-up">1.01%</div>
+                </div>
+            </td>
+            <td>
+                <div className="d-flex justify-content-center">
+                    <div className="title">4514</div>
+                    <div className="progress-up">1.01%</div>
+                </div>
+            </td>
+            <td>
+                <div className="d-flex justify-content-center">
+                    <div className="title">4514</div>
+                    <div className="progress-up">1.01%</div>
+                </div>
+            </td>
+            <td>
+                <div className="title">
+                    <img src={verifiedIcon} alt="icon"/>
+                </div>
+                <div className="date">02-15-2022</div>
+            </td>
+            <td>
+                <div className="d-flex justify-content-center">
+                    <div className="title">4514</div>
+                    <div className="progress-up">1.01%</div>
+                </div>
+            </td>
+            <td>
+                <div className="d-flex justify-content-center">
+                    <div className="title">4514</div>
+                    <div className="progress-down">1.01%</div>
                 </div>
             </td>
             <td>

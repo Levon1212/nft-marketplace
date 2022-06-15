@@ -20,7 +20,7 @@
     color: #666666;
     margin-right: 32px;
     white-space: nowrap;
-    display: none;
+    cursor:pointer;
   }
   .lang{
     font-family: 'PoppinsRegular',sans-serif;
@@ -99,4 +99,7 @@
       margin-left: 11px;
     }
   }
+}
+.dark-mode-button{
+  cursor: pointer;
 }

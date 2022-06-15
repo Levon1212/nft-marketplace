@@ -90,6 +90,7 @@
         position: relative;
         display: flex;
         justify-content: center;
+        cursor: pointer;
         .count{
           position: absolute;
           bottom: -21px;
@@ -151,9 +152,9 @@
     padding-top: 38px;
     .collectionHeader{
       position: absolute;
-      top:0;
-      z-index: 1000;
-      background-color: #f9fbfd;
+      top: 0;
+      z-index: 99999;
+      height: 86px;
       &::-webkit-scrollbar {
         display: none;
       }
@@ -173,7 +174,6 @@
         width: 100%;
         border-collapse: separate;
         border-spacing: 0 10px;
-
         thead{
           tr{
             height: 28px;
@@ -183,7 +183,11 @@
             margin-top: 10px;
           }
           th{
-            padding: 0 18px;
+            min-width: 122px;
+            text-align: center;
+            div{
+              justify-content: center;
+            }
             .title{
               font-family: 'PoppinsSemiBold',sans-serif;
               font-style: normal;
@@ -217,7 +221,11 @@
             margin-top: 10px;
           }
           td{
-            padding: 0 18px;
+            min-width: 122px;
+            text-align: center;
+            div{
+              justify-content: center;
+            }
             .number{
               font-family: 'PoppinsSemiBold',sans-serif;
               font-style: normal;
@@ -226,7 +234,6 @@
               line-height: 18px;
               letter-spacing: -0.02em;
               color: #333333;
-              padding-left: 15px;
             }
             .title{
               font-family: 'PoppinsSemiBold',sans-serif;
@@ -294,5 +301,151 @@
 .table1{
   thead{
     background-color: #ffffff;
+  }
+}
+.collection-table{
+
+}
+.table1,.table2{
+  td:nth-child(3){
+    min-width: 152px !important;
+  }
+  th:nth-child(3){
+    min-width: 152px !important;
+  }
+  td:nth-child(4){
+    min-width: 200px !important;
+  }
+  th:nth-child(4){
+    min-width: 200px !important;
+  }
+  td:nth-child(5){
+    min-width: 200px !important;
+  }
+  th:nth-child(5){
+    min-width: 200px !important;
+  }
+  td:nth-child(6){
+    min-width: 200px !important;
+  }
+  th:nth-child(6){
+    min-width: 200px !important;
+  }
+  td:nth-child(7){
+    min-width: 200px !important;
+  }
+  th:nth-child(7){
+    min-width: 200px !important;
+  }
+  td:nth-child(8){
+    min-width: 200px !important;
+  }
+  th:nth-child(8){
+    min-width: 200px !important;
+  }
+  td:nth-child(9){
+    min-width: 200px !important;
+  }
+  th:nth-child(9){
+    min-width: 200px !important;
+  }
+  td:nth-child(10){
+    min-width: 200px !important;
+  }
+  th:nth-child(10){
+    min-width: 200px !important;
+  }
+  td:nth-child(11){
+    min-width: 200px !important;
+  }
+  th:nth-child(11){
+    min-width: 200px !important;
+  }
+
+  td:nth-child(12){
+    min-width: 200px !important;
+  }
+  th:nth-child(12){
+    min-width: 200px !important;
+  }
+  td:nth-child(13){
+    min-width: 200px !important;
+  }
+  th:nth-child(13){
+    min-width: 200px !important;
+  }
+  td:nth-child(14){
+    min-width: 200px !important;
+  }
+  th:nth-child(14){
+    min-width: 200px !important;
+  }
+  td:nth-child(15){
+    min-width: 200px !important;
+  }
+  th:nth-child(15){
+    min-width: 200px !important;
+  }
+  td:nth-child(16){
+    min-width: 170px !important;
+  }
+  th:nth-child(16){
+    min-width: 170px !important;
+  }
+  td:nth-child(17){
+    min-width: 220px !important;
+  }
+  th:nth-child(17){
+    min-width: 220px !important;
+  }
+  td:nth-child(18){
+    min-width: 220px !important;
+  }
+  th:nth-child(18){
+    min-width: 220px !important;
+  }
+  td:nth-child(19){
+    min-width: 200px !important;
+  }
+  th:nth-child(19){
+    min-width: 200px !important;
+  }
+
+  td:nth-child(20){
+    min-width: 200px !important;
+  }
+  th:nth-child(20){
+    min-width: 200px !important;
+  }
+  td:nth-child(21){
+    min-width: 200px !important;
+  }
+  th:nth-child(21){
+    min-width: 200px !important;
+  }
+  td:nth-child(22){
+    min-width: 200px !important;
+  }
+  th:nth-child(22){
+    min-width: 200px !important;
+  }
+
+  td:nth-child(23){
+    min-width: 200px !important;
+  }
+  th:nth-child(23){
+    min-width: 200px !important;
+  }
+  td:nth-child(24){
+    min-width: 200px !important;
+  }
+  th:nth-child(24){
+    min-width: 200px !important;
+  }
+  td:nth-child(25){
+    min-width: 200px !important;
+  }
+  th:nth-child(25){
+    min-width: 200px !important;
   }
 }

@@ -1,48 +1,13 @@
 import React from 'react';
 import { ScrollSync, ScrollSyncPane } from 'react-scroll-sync';
+import vector2 from "../../assets/images/icons/vector2.svg";
+import vector3 from "../../assets/images/icons/vector3.svg";
+import vector4 from "../../assets/images/icons/vector4.svg";
+import iconBoat from "../../assets/images/icons/icon-boat.svg";
+import twitterIcon from "../../assets/images/icons/twtitter-icon.png";
 const Test = () => {
     return (
-        <div className='test'>
-            <ScrollSync>
-                <div style={{ display: 'flex', position: 'relative', height: 300 }}>
-                    <ScrollSyncPane>
-                        <div style={{overflow: 'auto'}}>
-                            <section style={{ height: 500 }}>
-                                <h1>Left Pane Content</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam doloribus
-                                    dolorum
-                                    est eum eveniet exercitationem iste labore minus, neque nobis odit officiis omnis
-                                    possimus quasi rerum sed soluta veritatis.</p>
-                            </section>
-                        </div>
-                    </ScrollSyncPane>
-
-                    <ScrollSyncPane>
-                        <div style={{overflow: 'auto'}}>
-                            <section style={{ height: 1000 }}>
-                                <h1>Middle Pane Content</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam doloribus
-                                    dolorum
-                                    est eum eveniet exercitationem iste labore minus, neque nobis odit officiis omnis
-                                    possimus quasi rerum sed soluta veritatis.</p>
-                            </section>
-                        </div>
-                    </ScrollSyncPane>
-
-                    <ScrollSyncPane>
-                        <div style={{overflow: 'auto'}}>
-                            <section style={{ height: 2000 }}>
-                                <h1>Right Pane Content</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam doloribus
-                                    dolorum
-                                    est eum eveniet exercitationem iste labore minus, neque nobis odit officiis omnis
-                                    possimus quasi rerum sed soluta veritatis.</p>
-                            </section>
-                        </div>
-                    </ScrollSyncPane>
-                </div>
-            </ScrollSync>
-        </div>
+        <div></div>
     );
 };
 

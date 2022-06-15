@@ -29,10 +29,17 @@
         color: #666666;
         margin-bottom: 1px;
         border-radius: 4px;
+        cursor: pointer;
+        transition: 0.5s;
         &.active{
           background-color: rgba(85, 110, 230, 1);
           color: #ffffff;
+          &:hover{
+            background-color: rgb(33, 51, 140);
+            color: #ffffff;
+          }
         }
+
         img{
           margin-right: 12px;
         }
