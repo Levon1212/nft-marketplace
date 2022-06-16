@@ -2,7 +2,7 @@ import React from 'react';
 import vector1 from '../../assets/images/icons/vector1.png'
 import verifiedIcon from '../../assets/images/icons/verfied-icon.svg'
 
-const CollectionItemRow = () => {
+const CollectionItemRow = (props) => {
     return (
         <tr>
             <td>
@@ -16,15 +16,15 @@ const CollectionItemRow = () => {
             <td>
                 <div className="d-flex align-items-center">
                     <div className="d-flex flex-column align-items-end">
-                        <div className="title ">
+                        <div className="title">
                             <img src={vector1} alt="vector"
                                  className="mx-2"/>
-                            <span>74,3</span>
+                            <span>{props.data.number}</span>
                         </div>
-                        <div className="date mt-2">$237.468,12</div>
+                        <div className="date mt-2">${props.data.value}</div>
                     </div>
                     <div className="progress-up">
-                        5.11%
+                        {props.data.percent}%
                     </div>
                 </div>
             </td>

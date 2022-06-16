@@ -467,12 +467,37 @@ button {
   height: 18px;
 }
 .sort-icon .sort-popover-container {
+  display: flex;
+  justify-content: flex-start !important;
+  align-items: center;
   width: 200px;
   height: 41px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   z-index: 99999;
   background-color: #FFFFFF;
+}
+.sort-icon .sort-popover-container .sortButtons {
+  display: flex;
+  width: 42px;
+  height: 33px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-right: 1px solid #EEF3F6;
+}
+.sort-icon .sort-popover-container .sortButtons svg {
+  margin: 4px 0;
+  cursor: pointer;
+}
+.sort-icon .sort-popover-container .sortButtons svg:hover path {
+  fill: #556EE6;
+}
+.sort-icon .sort-popover-container .sortRadioButtons {
+  display: flex;
+}
+.sort-icon .sort-popover-container .sortRadioButtons .MuiFormGroup-root {
+  flex-direction: row;
 }
 
 .collection-table {
@@ -1723,7 +1748,9 @@ button {
   line-height: 36px;
   letter-spacing: -0.02em;
   color: #333333;
-  margin-bottom: 4px;
+}
+.collections-page img {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */

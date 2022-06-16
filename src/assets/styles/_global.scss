@@ -454,11 +454,38 @@ button{
   width: 16px;
   height: 18px;
   .sort-popover-container{
+    display: flex;
+    justify-content: flex-start !important;
+    align-items: center;
     width: 200px;
     height: 41px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
     z-index: 99999;
     background-color: #FFFFFF;
+    .sortButtons{
+      display: flex;
+      width: 42px;
+      height: 33px;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      border-right: 1px solid #EEF3F6;
+      svg{
+        margin: 4px 0;
+        cursor: pointer;
+        &:hover{
+          path{
+            fill:#556EE6;
+          }
+        }
+      }
+    }
+    .sortRadioButtons{
+      display: flex;
+      .MuiFormGroup-root{
+        flex-direction: row;
+      }
+    }
   }
 }

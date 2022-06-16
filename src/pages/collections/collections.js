@@ -24,7 +24,14 @@ import { ScrollSync, ScrollSyncPane } from 'react-scroll-sync';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Popover from "../../components/popover";
-
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
+import OutsideClickHandler from 'react-outside-click-handler';
+// import DevExpress from "devextreme";
+// import data from "DevExpress.data";
 
 
 const Collections = () => {
@@ -39,6 +46,24 @@ const Collections = () => {
         'Status: Recently added',
         'Instagram: Verified'
     ])
+    const [value, setValue] = React.useState('percent');
+    const [sortType,setSortType] = useState('top');
+    const [openFilterPopOver,setOpenFilterPopover] = useState(false);
+    const [avgPrice,setAvgPrice] = useState([
+        {value:1000,percent:1,number:20},
+        {value:900,percent:3,number:20},
+        {value:800,percent:2,number:20},
+        {value:700,percent:5,number:20},
+        {value:600,percent:4,number:20},
+        {value:500,percent:7,number:20},
+        {value:400,percent:8,number:20},
+        {value:300,percent:10,number:20},
+        {value:200,percent:6,number:20},
+        {value:100,percent:9,number:20},
+    ])
+    const handleChange = (event) => {
+        setValue(event.target.value);
+    };
     const deleteFilter = (title) => {
         let data = filters.filter(e => e !== title)
         setFilters(data);
@@ -52,10 +77,15 @@ const Collections = () => {
         window.addEventListener('scroll', ()=>setScrollPosition( window.pageYOffset));
         console.log('elem',elem);
     },[])
-    const toggle = () => {
-        this.component.setOpen(this.focus);
-        this.focus = !this.focus;
-    }
+    useEffect(()=>{
+        let data = [];
+        if(sortType === 'top'){
+            data = avgPrice.sort((a,b) => (a[value] > b[value]) ? 1 : ((b[value] > a[value]) ? -1 : 0))
+        }else{
+            data = avgPrice.sort((a,b) => (a[value] < b[value]) ? 1 : ((b[value] < a[value]) ? -1 : 0))
+        }
+        console.log(sortType);
+    },[value,sortType])
     return (
         <div className='collections-page'>
             <StatisticHeader/>
@@ -208,7 +238,6 @@ const Collections = () => {
                     <CollectionItemMain/>
                 </div>
                     <ScrollSync>
-
                         <div className="collections-details">
                             <ScrollSyncPane>
                                 <div className='d-flex customScrollbar topScrollbarContainer' style={{overflow:'auto',width:`${elMaxWidth}px`}}>
@@ -225,11 +254,7 @@ const Collections = () => {
                                                         Platforms
                                                         <div className="sort-icon">
                                                             <img src={vector2} className="icon" alt="icon"/>
-                                                            {/*<div className="sort-popover-container">*/}
-                                                            {/*    <div className="sortButtons">*/}
-                                                            {/*        <img src="" alt=""/>*/}
-                                                            {/*    </div>*/}
-                                                            {/*</div>*/}
+
                                                         </div>
                                                         <div className='info-popover'>
                                                             <img src={vector3} className="icon" alt="icon"/>
@@ -256,7 +281,37 @@ const Collections = () => {
                                                 <th>
                                                     <div className="title d-flex align-items-center">
                                                         Avg. Floor Price
-                                                        <img src={vector2} className="icon" alt="icon"/>
+                                                        <OutsideClickHandler
+                                                            onOutsideClick={() => {setOpenFilterPopover(false)}}>
+                                                            <div className="sort-icon" onClick={()=>{setOpenFilterPopover(true)}}>
+                                                                <img src={vector2} className="icon" alt="icon"/>
+                                                                {
+                                                                    openFilterPopOver ? <div className="sort-popover-container">
+                                                                        <div className="sortButtons">
+                                                                            <svg onClick={()=>{setSortType('top')}} width="20" height="10" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                <path d="M5.00002 0.439514L0.881104 3.96951L2.11894 5.03051L5.00002 2.56051L7.8811 5.03051L9.11894 3.96951L5.00002 0.439514Z" fill="#A1A1A1"/>
+                                                                            </svg>
+                                                                            <svg onClick={()=>{setSortType('bottom')}} width="20" height="10" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                <path d="M4.99998 4.591L9.1189 1.061L7.88106 3.5892e-06L4.99998 2.47L2.1189 3.15742e-06L0.881063 1.061L4.99998 4.591Z" fill="#A1A1A1"/>
+                                                                            </svg>
+                                                                        </div>
+                                                                        <div className="sortRadioButtons">
+                                                                            <FormControl>
+                                                                                <RadioGroup
+                                                                                    aria-labelledby="demo-controlled-radio-buttons-group"
+                                                                                    name="controlled-radio-buttons-group"
+                                                                                    value={value}
+                                                                                    onChange={handleChange}
+                                                                                >
+                                                                                    <FormControlLabel value="percent" control={<Radio size='small'/>} label="%" />
+                                                                                    <FormControlLabel value="value" control={<Radio size='small'/>} label="Value" />
+                                                                                </RadioGroup>
+                                                                            </FormControl>
+                                                                        </div>
+                                                                    </div> : ''
+                                                                }
+                                                            </div>
+                                                        </OutsideClickHandler>
                                                         <img src={vector3} className="icon" alt="icon"/>
                                                         <img src={vector4} className="icon-progress" alt="icon"/>
                                                     </div>
@@ -400,7 +455,6 @@ const Collections = () => {
                                                         <img src={vector3} className="icon" alt="icon"/>
                                                     </div>
                                                 </th>
-
                                                 <th>
                                                     <div className="title d-flex align-items-center">
                                                         <img src={twitterIcon} className="icon me-1" alt="icon"/>
@@ -434,16 +488,9 @@ const Collections = () => {
                                 <div className="content d-flex collectionsItemsTable customScrollbar">
                                     <table className='table2'>
                                         <tbody>
-                                        <CollectionItemRow/>
-                                        <CollectionItemRow/>
-                                        <CollectionItemRow/>
-                                        <CollectionItemRow/>
-                                        <CollectionItemRow/>
-                                        <CollectionItemRow/>
-                                        <CollectionItemRow/>
-                                        <CollectionItemRow/>
-                                        <CollectionItemRow/>
-                                        <CollectionItemRow/>
+                                        {
+                                            avgPrice.map(e => <CollectionItemRow data={e}/>)
+                                        }
                                         </tbody>
                                     </table>
                                 </div>
