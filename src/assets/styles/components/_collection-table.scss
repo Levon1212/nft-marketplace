@@ -245,6 +245,9 @@
               letter-spacing: -0.02em;
               color: #333333;
               white-space: nowrap;
+              svg,img{
+                cursor: pointer;
+              }
             }
             .date{
               font-family: 'PoppinsMedium',sans-serif;

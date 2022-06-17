@@ -1,8 +1,11 @@
-import React from 'react';
+import React,{useState} from 'react';
 import vector1 from '../../assets/images/icons/vector1.png'
 import verifiedIcon from '../../assets/images/icons/verfied-icon.svg'
+import Popup from "../popup";
 
 const CollectionItemRow = (props) => {
+    const [openPopupMain,setOpenPopupMain] = useState(false)
+
     return (
         <tr>
             <td>
@@ -18,8 +21,10 @@ const CollectionItemRow = (props) => {
                     <div className="d-flex flex-column align-items-end">
                         <div className="title">
                             <img src={vector1} alt="vector"
+                                 onClick={()=>{setOpenPopupMain(true)}}
                                  className="mx-2"/>
                             <span>{props.data.number}</span>
+                            {openPopupMain ? <Popup setOpenPopupMain={setOpenPopupMain}/> : ''}
                         </div>
                         <div className="date mt-2">${props.data.value}</div>
                     </div>

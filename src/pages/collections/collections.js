@@ -28,10 +28,9 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
-import FormLabel from '@mui/material/FormLabel';
 import OutsideClickHandler from 'react-outside-click-handler';
-// import DevExpress from "devextreme";
-// import data from "DevExpress.data";
+import TimeButtons from "../../components/time-buttons";
+
 
 
 const Collections = () => {
@@ -40,7 +39,6 @@ const Collections = () => {
     const [elMaxWidth, setElMaxWidth] = React.useState(500);
     const [tableWidth, setTableWidth] = React.useState(500);
     const [startDate, setStartDate] = useState(new Date());
-    const [filterTime,setFilterTime] = useState('1min')
     const [filters,setFilters] = useState([
         'Twitter followers: >2000',
         'Status: Recently added',
@@ -61,6 +59,7 @@ const Collections = () => {
         {value:200,percent:6,number:20},
         {value:100,percent:9,number:20},
     ])
+
     const handleChange = (event) => {
         setValue(event.target.value);
     };
@@ -75,7 +74,6 @@ const Collections = () => {
         setElMaxWidth(elem.width)
         setTableWidth(table1.width)
         window.addEventListener('scroll', ()=>setScrollPosition( window.pageYOffset));
-        console.log('elem',elem);
     },[])
     useEffect(()=>{
         let data = [];
@@ -123,45 +121,7 @@ const Collections = () => {
                 </div>
             </div>
             <div className="main-container my-3 align-items-center with-datepicker">
-                <div className={`time-button ${filterTime === '1min' ? 'active' : ''}`} onClick={()=>{setFilterTime('1min')}}>
-                    1Min
-                </div>
-                <div className={`time-button ${filterTime === '15min' ? 'active' : ''}`} onClick={()=>{setFilterTime('15min')}}>
-                    15Min
-                </div>
-                <div className={`time-button ${filterTime === '30min' ? 'active' : ''}`} onClick={()=>{setFilterTime('30min')}}>
-                    30Min
-                </div>
-                <div className={`time-button ${filterTime === '1h' ? 'active' : ''}`} onClick={()=>{setFilterTime('1h')}}>
-                    1h
-                </div>
-                <div className={`time-button ${filterTime === '6h' ? 'active' : ''}`} onClick={()=>{setFilterTime('6h')}}>
-                    6h
-                </div>
-                <div className={`time-button ${filterTime === '24h' ? 'active' : ''}`} onClick={()=>{setFilterTime('24h')}}>
-                    24h
-                </div>
-                <div className={`time-button ${filterTime === '48h' ? 'active' : ''}`} onClick={()=>{setFilterTime('48h')}}>
-                    48h
-                </div>
-                <div className={`time-button ${filterTime === '7d' ? 'active' : ''}`} onClick={()=>{setFilterTime('7d')}}>
-                    7d
-                </div>
-                <div className={`time-button ${filterTime === '14d' ? 'active' : ''}`} onClick={()=>{setFilterTime('14d')}}>
-                    14d
-                </div>
-                <div className={`time-button ${filterTime === '30d' ? 'active' : ''}`} onClick={()=>{setFilterTime('30d')}}>
-                    30d
-                </div>
-                <div className={`time-button ${filterTime === '60d' ? 'active' : ''}`} onClick={()=>{setFilterTime('60d')}}>
-                    60d
-                </div>
-                <div className={`time-button ${filterTime === '90d' ? 'active' : ''}`} onClick={()=>{setFilterTime('90d')}}>
-                    90d
-                </div>
-                <div className={`time-button ${filterTime === '12mont' ? 'active' : ''}`} onClick={()=>{setFilterTime('12mont')}}>
-                    12 Months
-                </div>
+                <TimeButtons/>
                 <DatePicker className="date-picker-label"
                             selected={startDate}
                             dateFormat="MMM dd"

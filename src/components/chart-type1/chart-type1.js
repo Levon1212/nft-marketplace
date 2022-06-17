@@ -43,7 +43,7 @@ const ChartType1 = () => {
                 >
                     <Size height={70} />
                     <Margin left={10}  />
-                    <SliderHandle color={'#238'} width={20} opacity={1}/>
+                    <SliderHandle   opacity={1}/>
                     <Scale minorTickCount={1}  startValue={10} endValue={800} />
                 </RangeSelector>
             </React.Fragment>
