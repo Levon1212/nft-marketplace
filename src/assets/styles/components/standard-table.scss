@@ -1,0 +1,47 @@
+@import "../variables";
+.standard-table{
+  display: flex;
+  width: 100%;
+  table{
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    tr{
+      background-color: $tableRowBg;
+    }
+    th{
+      height: 28px;
+    }
+    td{
+      height: 55px;
+      text-align: center;
+      .title{
+        font-family: 'PoppinsRegular',sans-serif;
+        font-style: normal;
+        font-weight: 500;
+      }
+    }
+    th,td{
+      padding: 0 15px;
+      white-space: nowrap;
+    }
+    .nftImage{
+      width: 16px;
+      height: 16px;
+      object-fit: cover;
+      border-radius: 100%;
+    }
+    .title{
+      font-family: 'PoppinsMedium',sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 21px;
+      color: #333333;
+      text-align: center;
+    }
+    .title2{
+      color:  #A1A1A1;
+    }
+  }
+}

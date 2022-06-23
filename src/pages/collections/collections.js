@@ -30,6 +30,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import OutsideClickHandler from 'react-outside-click-handler';
 import TimeButtons from "../../components/time-buttons";
+import AddFilterPpopup from "../../components/add-popup-popup";
 
 
 
@@ -59,7 +60,7 @@ const Collections = () => {
         {value:200,percent:6,number:20},
         {value:100,percent:9,number:20},
     ])
-
+    const [filterPopupOpen,setFilterPopupOpen] = useState(false);
     const handleChange = (event) => {
         setValue(event.target.value);
     };
@@ -98,10 +99,13 @@ const Collections = () => {
                     <span>Read more</span>
                 </p>
             </div>
-            <div className="main-container">
-                <div className="add-filter-button">
+            <div className="main-container filterContainer">
+                <div className="add-filter-button" onClick={()=>setFilterPopupOpen(true)}>
                     <img src={plusIcon} alt="plus icon"/>
                     Add Filter
+                    {
+                        filterPopupOpen ? <AddFilterPpopup/> : ''
+                    }
                 </div>
                 <span className='solid-border'></span>
                 {

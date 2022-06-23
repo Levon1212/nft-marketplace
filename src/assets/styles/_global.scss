@@ -1,3 +1,4 @@
+@import "variables";
 *{
   margin: 0;
   padding: 0;
@@ -145,6 +146,7 @@ button{
   border: 1px solid #CDD2E1;
   border-radius: 4px;
   cursor: pointer;
+  position: relative;
   img{
     margin-right: 12px;
   }
@@ -488,4 +490,28 @@ button{
       }
     }
   }
+}
+.w-fit{
+  width: fit-content;
+}
+.button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $buttonBlueBg;
+  border: 2px solid $buttonBlueBg;
+  border-radius: 4px;
+  color: #FFFFFF;
+  font-family: 'PoppinsRegular',sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: -0.02em;
+  padding: 8px 11px;
+}
+.greyButton{
+  color: $textColor2;
+  background-color: $buttonGrayBg;
+  border: 3px solid $buttonGrayBg;
 }
