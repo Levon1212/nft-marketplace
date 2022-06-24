@@ -2016,6 +2016,7 @@ button {
   padding: 0 15px;
   align-items: center;
   background: #F4F5F7;
+  min-height: 43px;
   height: 43px;
   justify-content: space-between;
 }
@@ -2045,6 +2046,98 @@ button {
   display: flex;
   align-items: flex-end;
   color: #666666;
+}
+
+.filter-status {
+  display: flex;
+  flex-direction: column;
+}
+
+.mui-radio-wrapper .MuiTypography-root {
+  font-family: "PoppinsRegular", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: -0.02em;
+  color: #666666;
+}
+.mui-radio-wrapper .MuiFormGroup-root {
+  flex-direction: row;
+}
+
+.filterSmallTitle {
+  font-family: "PoppinsMedium", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: -0.02em;
+  color: #666666;
+  display: flex;
+  align-items: center;
+}
+.filterSmallTitle span {
+  font-family: "PoppinsSemiBold", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 15px;
+  color: #333333;
+  margin-left: 7px;
+}
+
+.filter-type-2 {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #EEF3F6;
+}
+
+.rangeInput {
+  width: 49px;
+  height: 26px;
+  background: #FFFFFF;
+  border: 1px solid #C4C4C4;
+  border-radius: 4px;
+  text-indent: 7px;
+  font-family: "PoppinsRegular", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: -0.02em;
+  color: #333333;
+}
+
+.rangeWrapper {
+  display: flex;
+  width: 150px;
+  flex-direction: column;
+}
+
+.rangeContainer {
+  padding-right: 32px !important;
+}
+
+.rangeIndicators {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.rangeIndicators span {
+  font-family: "PoppinsRegular", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: -0.02em;
+  color: #A1A1A1;
+}
+
+.filter-pricing {
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .standard-table {

@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import FilterNav from "./filter-nav";
 import FilterName from "./filter-name";
 import FilterPlatform from "./filter-platform/filter-platform";
+import FilterStatus from "./filter-status";
+import FilterPricing from "./filter-pricing";
 
 const AddFilterPpopup = () => {
     const [page,setPage] = useState('name')
@@ -9,10 +11,11 @@ const AddFilterPpopup = () => {
         <div className='add-filter-popup'>
             <div className="d-flex main-wrapper">
                 <FilterNav setPage={setPage}/>
-
                 <div className="filterContentWrapper">
                     {page === 'name' ? <FilterName/> : ''}
                     {page === 'platform' ? <FilterPlatform/> : ''}
+                    {page === 'status' ? <FilterStatus/> : ''}
+                    {page === 'pricing' ? <FilterPricing/> : ''}
                 </div>
             </div>
             <div className="filterButtonsWrapper">
