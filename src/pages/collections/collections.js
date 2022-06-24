@@ -104,7 +104,13 @@ const Collections = () => {
                     <img src={plusIcon} alt="plus icon"/>
                     Add Filter
                     {
-                        filterPopupOpen ? <AddFilterPpopup/> : ''
+                        filterPopupOpen ?
+                            <OutsideClickHandler
+                                onOutsideClick={() => {setFilterPopupOpen(false)}}
+                            >
+                                <AddFilterPpopup/>
+                            </OutsideClickHandler>
+                            : ''
                     }
                 </div>
                 <span className='solid-border'></span>

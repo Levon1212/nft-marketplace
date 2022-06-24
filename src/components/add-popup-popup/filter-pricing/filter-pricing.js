@@ -13,7 +13,7 @@ const FilterPricing = () => {
         <div className='filter-pricing customScrollbar'>
             <div className="nameButton" onClick={()=>{setFloorOpen(!floorOpen)}}>
                 Floor price
-                <img src={downVector} alt=""/>
+                <img src={downVector} alt="" style={{transform:`rotate(${floorOpen ? '0' : '-90'}deg)`}}/>
             </div>
             {
                 floorOpen ? <>
@@ -25,7 +25,7 @@ const FilterPricing = () => {
             }
             <div className="nameButton" onClick={()=>{setAverage(!average)}}>
                 Average Price
-                <img src={downVector} alt=""/>
+                <img src={downVector} alt="" style={{transform:`rotate(${average ? '0' : '-90'}deg)`}}/>
             </div>
             {
                 average ? <>
@@ -37,7 +37,7 @@ const FilterPricing = () => {
             }
             <div className="nameButton" onClick={()=>{setVolume(!volume)}}>
                 Volume Traded
-                <img src={downVector} alt=""/>
+                <img src={downVector} alt="" style={{transform:`rotate(${volume ? '0' : '-90'}deg)`}}/>
             </div>
             {
                 volume ? <>

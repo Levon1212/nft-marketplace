@@ -18,7 +18,7 @@ const FilterStatus = () => {
         <div className='filter-status'>
             <div className="nameButton" onClick={()=>{setOpen(!open)}}>
                 Status
-                <img src={downVector} alt=""/>
+                <img src={downVector} alt="" style={{transform:`rotate(${open ? '0' : '-90'}deg)`}}/>
             </div>
             {
                 open ? <div className="d-flex w-100 p-3">

@@ -39,7 +39,7 @@ const FilterPlatform = () => {
         <div className='filterPlatform'>
             <div className="nameButton" onClick={()=>{setOpen(!open)}}>
                 Platform
-                <img src={downVector} alt=""/>
+                <img src={downVector} alt="" style={{transform:`rotate(${open ? '0' : '-90'}deg)`}}/>
             </div>
             {
                 open ? <>

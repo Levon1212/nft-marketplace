@@ -18,7 +18,7 @@ const FilterName = () => {
         <div className='d-flex flex-column filterNameContainer'>
             <div className="nameButton" onClick={()=>setOpen(!open)}>
                 Name
-                <img src={downVector} alt=""/>
+                <img src={downVector} alt="" style={{transform:`rotate(${open ? '0' : '-90'}deg)`}}/>
             </div>
             {
                 open ?  <>
