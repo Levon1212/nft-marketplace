@@ -111,4 +111,106 @@
       }
     }
   }
+  .popupNavButtons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 43px;
+    height: 30px;
+    border: 1px solid #CDD2E1;
+    border-radius: 4px;
+    margin: 4px;
+  }
+}
+.followers-home-content{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  img{
+    width: 66px;
+    height: 66px;
+    border-radius: 100%;
+    object-fit: cover;
+    margin-bottom: 7px;
+  }
+  .title{
+    font-family: 'PoppinsSemiBold',sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #333333;
+    margin-bottom: 10px;
+  }
+  .statisticWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 251px;
+    height: 61px;
+    padding: 12px 0;
+    background: #FFFFFF;
+    border: 1px solid #979797;
+    border-radius: 4px;
+    margin-bottom: 43px;
+    .item{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding:0 12px;
+      &:nth-child(2){
+        border-right: 1px solid #979797;
+        border-left: 1px solid #979797;
+      }
+      .title{
+        font-family: 'PoppinsRegular',sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 18px;
+        color: #666666;
+      }
+      .count{
+        font-family: 'PoppinsMedium',sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 21px;
+        color: #333333;
+      }
+    }
+  }
+  .detailsWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    .item{
+      display: flex;
+      font-family: 'PoppinsMedium',sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 18px;
+      color: #666666;
+      padding: 0 17px;
+      &:nth-child(2){
+        border-right: 1px solid #979797;
+        border-left: 1px solid #979797;
+      }
+      span{
+        font-family: 'PoppinsSemiBold',sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 18px;
+        color: #333333;
+      }
+    }
+  }
 }

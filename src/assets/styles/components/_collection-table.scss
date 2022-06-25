@@ -79,10 +79,34 @@
       padding-left: 18px;
       position: relative;
       border-radius: 5px;
+      .likesWrapper{
+        display: flex;
+        position: absolute;
+        right: 27px;
+        bottom: 5px;
+      }
+      .likesButtons{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 36px;
+        height: 13px;
+        margin: 0 1.5px;
+        font-family: 'PoppinsRegular',sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 15px;
+        letter-spacing: -0.02em;
+        color: #666666;
+        border: 0.44186px solid #C4C4C4;
+        border-radius: 1.76744px;
+        cursor: pointer;
+      }
       .icon{
         position: absolute;
-        right: 13px;
-        bottom: 10px;
+        right: 7px;
+        bottom: 5px;
         width: 19px;
         height: 13px;
       }

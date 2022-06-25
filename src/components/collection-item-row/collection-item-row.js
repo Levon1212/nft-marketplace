@@ -2,10 +2,11 @@ import React,{useState} from 'react';
 import vector1 from '../../assets/images/icons/vector1.png'
 import verifiedIcon from '../../assets/images/icons/verfied-icon.svg'
 import Popup from "../popup";
+import PopupFollowers from "../popup-followers";
 
 const CollectionItemRow = (props) => {
     const [openPopupMain,setOpenPopupMain] = useState(false)
-
+    const [popupFollowers,setPopupFollowers] = useState(false)
     return (
         <tr>
             <td>
@@ -125,9 +126,10 @@ const CollectionItemRow = (props) => {
                 </div>
             </td>
             <td>
-                <div className="d-flex justify-content-center">
-                    <div className="title">4514</div>
-                    <div className="progress-up">1.01%</div>
+                <div className="d-flex justify-content-center cursor-pointer position-relative">
+                    <div className="title" onClick={()=>{setPopupFollowers(true)}}>4514</div>
+                    <div className="progress-up" onClick={()=>{setPopupFollowers(true)}}>1.01%</div>
+                    {popupFollowers ? <PopupFollowers setPopupFollowers={setPopupFollowers}/> : ''}
                 </div>
             </td>
             <td>

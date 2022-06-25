@@ -455,6 +455,7 @@ button{
   position: relative;
   width: 16px;
   height: 18px;
+  cursor: pointer;
   .sort-popover-container{
     display: flex;
     justify-content: flex-start !important;
@@ -476,11 +477,11 @@ button{
       svg{
         margin: 4px 0;
         cursor: pointer;
-        &:hover{
-          path{
-            fill:#556EE6;
-          }
-        }
+        //&:hover{
+        //  path{
+        //    fill:#556EE6;
+        //  }
+        //}
       }
     }
     .sortRadioButtons{
@@ -514,4 +515,7 @@ button{
   color: $textColor2;
   background-color: $buttonGrayBg;
   border: 3px solid $buttonGrayBg;
+}
+.cursor-pointer{
+  cursor: pointer;
 }

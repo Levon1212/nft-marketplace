@@ -72,10 +72,27 @@ const Popup = (props) => {
                     }
                 </div>
 
-                {view === 'chart' ? <ChartType1/> : ''}
-                {view === 'list' ? <PopupList1/> : ''}
+                {view === 'chart' ? <ChartType1/>  : ''}
+                {view === 'list'  ? <PopupList1/>  : ''}
                 {view === 'table' ? <PopupTable1/> : ''}
             </div>
+            {
+                view !== 'chart' ?
+                    <div className="d-flex w-100 justify-content-end my-2">
+                        <button className="popupNavButtons">
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10.667 6L1.33366 6" stroke="#C4C4C4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M6 10.6667L1.33333 6.00008L6 1.33341" stroke="#C4C4C4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <button className="popupNavButtons">
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.33301 6L10.6663 6" stroke="#666666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6 1.33325L10.6667 5.99992L6 10.6666" stroke="#666666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div> : ''
+            }
         </div>
     );
 };

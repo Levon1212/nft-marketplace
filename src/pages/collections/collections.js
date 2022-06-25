@@ -254,15 +254,19 @@ const Collections = () => {
                                                         <OutsideClickHandler
                                                             onOutsideClick={() => {setOpenFilterPopover(false)}}>
                                                             <div className="sort-icon" onClick={()=>{setOpenFilterPopover(true)}}>
-                                                                <img src={vector2} className="icon" alt="icon"/>
+                                                                <svg width="13" height="13" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path fillRule="evenodd" clipRule="evenodd" d="M6 0.5C2.9625 0.5 0.5 2.9625 0.5 6C0.5 9.0375 2.9625 11.5 6 11.5C9.0375 11.5 11.5 9.0375 11.5 6C11.5 2.9625 9.0375 0.5 6 0.5ZM4.3535 4.8965C4.2592 4.80542 4.1329 4.75502 4.0018 4.75616C3.8707 4.7573 3.74529 4.80989 3.65259 4.90259C3.55989 4.99529 3.5073 5.1207 3.50616 5.2518C3.50502 5.3829 3.55542 5.5092 3.6465 5.6035L5.6465 7.6035C5.74026 7.69724 5.86742 7.74989 6 7.74989C6.13258 7.74989 6.25974 7.69724 6.3535 7.6035L8.3535 5.6035C8.44458 5.5092 8.49498 5.3829 8.49384 5.2518C8.4927 5.1207 8.44011 4.99529 8.34741 4.90259C8.25471 4.80989 8.1293 4.7573 7.9982 4.75616C7.8671 4.75502 7.7408 4.80542 7.6465 4.8965L6 6.543L4.3535 4.8965Z" fill={openFilterPopOver ? "#556EE6" : '#A1A1A1'}/>
+                                                                </svg>
+
+
                                                                 {
                                                                     openFilterPopOver ? <div className="sort-popover-container">
                                                                         <div className="sortButtons">
                                                                             <svg onClick={()=>{setSortType('top')}} width="20" height="10" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                                <path d="M5.00002 0.439514L0.881104 3.96951L2.11894 5.03051L5.00002 2.56051L7.8811 5.03051L9.11894 3.96951L5.00002 0.439514Z" fill="#A1A1A1"/>
+                                                                                <path d="M5.00002 0.439514L0.881104 3.96951L2.11894 5.03051L5.00002 2.56051L7.8811 5.03051L9.11894 3.96951L5.00002 0.439514Z" fill={sortType === 'top' ? "#556EE6" : '#A1A1A1'}/>
                                                                             </svg>
                                                                             <svg onClick={()=>{setSortType('bottom')}} width="20" height="10" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                                <path d="M4.99998 4.591L9.1189 1.061L7.88106 3.5892e-06L4.99998 2.47L2.1189 3.15742e-06L0.881063 1.061L4.99998 4.591Z" fill="#A1A1A1"/>
+                                                                                <path d="M4.99998 4.591L9.1189 1.061L7.88106 3.5892e-06L4.99998 2.47L2.1189 3.15742e-06L0.881063 1.061L4.99998 4.591Z" fill={sortType === 'bottom' ? "#556EE6" : '#A1A1A1'}/>
                                                                             </svg>
                                                                         </div>
                                                                         <div className="sortRadioButtons">
