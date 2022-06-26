@@ -226,12 +226,18 @@
                 height: 13px;
                 object-fit: contain;
                 margin-left: 3px;
+                cursor: pointer;
               }
               img.icon-progress{
                 width: 19px;
                 height: 13px;
                 object-fit: contain;
                 margin-left: 3px;
+                cursor: pointer;
+              }
+              svg{
+                margin-left: 3px;
+                cursor: pointer;
               }
             }
           }
@@ -258,6 +264,7 @@
               line-height: 18px;
               letter-spacing: -0.02em;
               color: #333333;
+              cursor: pointer;
             }
             .title{
               font-family: 'PoppinsSemiBold',sans-serif;
@@ -335,10 +342,10 @@
 }
 .table1,.table2{
   td:nth-child(3){
-    min-width: 152px !important;
+    min-width: 170px !important;
   }
   th:nth-child(3){
-    min-width: 152px !important;
+    min-width: 170px !important;
   }
   td:nth-child(4){
     min-width: 200px !important;
@@ -474,5 +481,19 @@
   }
   th:nth-child(25){
     min-width: 200px !important;
+  }
+}
+.smallChart{
+  .dxc-grids-group{
+    opacity: 0;
+  }
+  .dxc-axes-group{
+    opacity: 0;
+  }
+  .dxc-val-elements{
+    opacity: 0;
+  }
+  .dx-visibility-change-handler{
+    display: flex;
   }
 }

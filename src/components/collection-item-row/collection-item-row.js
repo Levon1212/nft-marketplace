@@ -3,20 +3,40 @@ import vector1 from '../../assets/images/icons/vector1.png'
 import verifiedIcon from '../../assets/images/icons/verfied-icon.svg'
 import Popup from "../popup";
 import PopupFollowers from "../popup-followers";
+import SmallChart from "../small-chart";
+import PlatformPopup from "../platform-popup";
+import OutsideClickHandler from "react-outside-click-handler/esm/OutsideClickHandler";
 
 const CollectionItemRow = (props) => {
     const [openPopupMain,setOpenPopupMain] = useState(false)
     const [popupFollowers,setPopupFollowers] = useState(false)
+    const [platformPopupOpen,setPlatformPopupOpen] = useState(false)
     return (
         <tr>
             <td>
-                <div className="number">20</div>
+                <div className="number position-relative" >
+                    <span onClick={()=>setPlatformPopupOpen(true)}>20</span>
+                    {platformPopupOpen
+                        ?
+                        <OutsideClickHandler onOutsideClick={() => {setPlatformPopupOpen(false)}}>
+                            <PlatformPopup/>
+                        </OutsideClickHandler>
+                        :
+                        ''}
+                </div>
             </td>
             <td>
                 <div className="title">Minted</div>
                 <div className="date">02-15-2022</div>
             </td>
-            <td className="text-nowrap text-center">---</td>
+            <td className="text-nowrap text-center">
+                {
+                     <SmallChart show={props.chart === 'floor' ? true : false}/>
+                }
+                <div className={props.chart === 'floor' ? "d-none" : ''}>
+                    ---
+                </div>
+            </td>
             <td>
                 <div className="d-flex align-items-center">
                     <div className="d-flex flex-column align-items-end">

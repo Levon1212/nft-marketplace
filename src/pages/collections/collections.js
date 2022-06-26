@@ -39,6 +39,7 @@ const Collections = () => {
     const [positionTop, setPositionTop] = React.useState(1000);
     const [elMaxWidth, setElMaxWidth] = React.useState(500);
     const [tableWidth, setTableWidth] = React.useState(500);
+    const [tableChart,setTableChart] = useState('none')
     const [startDate, setStartDate] = useState(new Date());
     const [filters,setFilters] = useState([
         'Twitter followers: >2000',
@@ -245,7 +246,19 @@ const Collections = () => {
                                                         Floor Price
                                                         <img src={vector2} className="icon" alt="icon"/>
                                                         <img src={vector3} className="icon" alt="icon"/>
-                                                        <img src={vector4} className="icon-progress" alt="icon"/>
+                                                        <svg width="19" height="14" viewBox="0 0 19 14" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={()=>{setTableChart(tableChart === 'floor' ? 'none' : 'floor')}}>
+                                                            <rect width="19" height="13.2558" rx="1.76744" fill={tableChart === 'floor' ? '#556EE6' : '#A1A1A1'}/>
+                                                            <g clip-path="url(#clip0_3_26)">
+                                                                <path d="M14.1098 3.63253L10.1282 7.61415L8.03259 5.51856L4.8892 8.66195" stroke="white" stroke-width="1.34118" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                <path d="M11.5956 3.63253H14.1103V6.14724" stroke="white" stroke-width="1.34118" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </g>
+                                                            <defs>
+                                                                <clipPath id="clip0_3_26">
+                                                                    <rect width="10.0588" height="10.0588" fill="white" transform="translate(4.47047 1.11778)"/>
+                                                                </clipPath>
+                                                            </defs>
+                                                        </svg>
+
                                                     </div>
                                                 </th>
                                                 <th>
@@ -463,7 +476,7 @@ const Collections = () => {
                                     <table className='table2'>
                                         <tbody>
                                         {
-                                            avgPrice.map(e => <CollectionItemRow data={e}/>)
+                                            avgPrice.map(e => <CollectionItemRow chart={tableChart} data={e}/>)
                                         }
                                         </tbody>
                                     </table>
