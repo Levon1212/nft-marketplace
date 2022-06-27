@@ -144,7 +144,7 @@ const PopupFollowers = (props) => {
                     }
                 </div>
 
-                {view === 'chart' ? <ChartType1/>  : ''}
+                {view === 'chart' ? <ChartType1 type={'single'}/>  : ''}
                 {view === 'home'  ? <PopupList1/>  : ''}
                 {view === 'table' ? <PopupTable1/> : ''}
             </div>

@@ -6,11 +6,13 @@ import PopupFollowers from "../popup-followers";
 import SmallChart from "../small-chart";
 import PlatformPopup from "../platform-popup";
 import OutsideClickHandler from "react-outside-click-handler/esm/OutsideClickHandler";
+import CircleChartPopup from "../circle-chart-popup";
 
 const CollectionItemRow = (props) => {
     const [openPopupMain,setOpenPopupMain] = useState(false)
     const [popupFollowers,setPopupFollowers] = useState(false)
     const [platformPopupOpen,setPlatformPopupOpen] = useState(false)
+    const [holdingPopupOpen,setHoldingPopupOpen] = useState(false)
     return (
         <tr>
             <td>
@@ -90,6 +92,35 @@ const CollectionItemRow = (props) => {
                 <div className="d-flex justify-content-center">
                     <div className="title">4514</div>
                     <div className="progress-up">1.01%</div>
+                </div>
+            </td>
+            <td>
+                <div className="d-flex justify-content-center">
+                    <div className="title">4514</div>
+                    <div className="progress-up">1.01%</div>
+                </div>
+            </td>
+            <td>
+                <div className="d-flex justify-content-center">
+                    <div className="title">4514</div>
+                    <div className="progress-up">1.01%</div>
+                </div>
+            </td>
+            <td>
+                <div className="d-flex justify-content-center">
+                    <div className="title">4514</div>
+                    <div className="progress-up">1.01%</div>
+                </div>
+            </td>
+            <td>
+                <div className="d-flex justify-content-center position-relative">
+                    <div className='d-flex' onClick={()=>{setHoldingPopupOpen(true)}}>
+                        <div className="title">4514</div>
+                        <div className="progress-up">1.01%</div>
+                    </div>
+                    {
+                        holdingPopupOpen ? <CircleChartPopup closeHandle={setHoldingPopupOpen}/> : ''
+                    }
                 </div>
             </td>
             <td>

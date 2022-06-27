@@ -31,6 +31,8 @@ import FormControl from '@mui/material/FormControl';
 import OutsideClickHandler from 'react-outside-click-handler';
 import TimeButtons from "../../components/time-buttons";
 import AddFilterPpopup from "../../components/add-popup-popup";
+import CompareHolders from "../../components/compare-holders";
+import ComparePopup from "../../components/compare-popup";
 
 
 
@@ -41,6 +43,8 @@ const Collections = () => {
     const [tableWidth, setTableWidth] = React.useState(500);
     const [tableChart,setTableChart] = useState('none')
     const [startDate, setStartDate] = useState(new Date());
+    const [comparePopupOpen,setComparePopupOpen] = useState(false)
+    const [compareHoldersOpen,setCompareHoldersOpen] = useState(false)
     const [filters,setFilters] = useState([
         'Twitter followers: >2000',
         'Status: Recently added',
@@ -155,10 +159,14 @@ const Collections = () => {
                     <img src={platformIcon} className='icon' alt="star icon"/>
                     Platform
                 </div>
-                <div className="filter-button">
-                    <img src={compareIcon} className='icon' alt="star icon"/>
-                    Compare
+                <div className="d-flex position-relative">
+                    <div className="filter-button" onMouseUp={()=>{setComparePopupOpen(true)}}>
+                        <img src={compareIcon} className='icon' alt="star icon"/>
+                        Compare
+                    </div>
+                    {comparePopupOpen ? <ComparePopup setCompareHoldersOpen={setCompareHoldersOpen}  closeHandle={setComparePopupOpen} /> : ''}
                 </div>
+
             </div>
             <div className="main-container mt-2">
                 <div className="filter-button info">
@@ -187,6 +195,9 @@ const Collections = () => {
                 </div>
             </div>
             <TabsMain/>
+            {
+                compareHoldersOpen ? <CompareHolders/> : ''
+            }
             <div className="collection-table">
                 <div className="collections">
                     <div className={`header ${scrollPosition > positionTop - 30 ? 'fixedHeader' : ''}`}>
@@ -344,6 +355,38 @@ const Collections = () => {
                                                 <th>
                                                     <div className="title d-flex align-items-center">
                                                         Supply Listed
+                                                        <img src={vector2} className="icon" alt="icon"/>
+                                                        <img src={vector3} className="icon" alt="icon"/>
+                                                        <img src={vector4} className="icon-progress" alt="icon"/>
+                                                    </div>
+                                                </th>
+                                                <th>
+                                                    <div className="title d-flex align-items-center">
+                                                        Whales
+                                                        <img src={vector2} className="icon" alt="icon"/>
+                                                        <img src={vector3} className="icon" alt="icon"/>
+                                                        <img src={vector4} className="icon-progress" alt="icon"/>
+                                                    </div>
+                                                </th>
+                                                <th>
+                                                    <div className="title d-flex align-items-center">
+                                                        Blue Chip Holders
+                                                        <img src={vector2} className="icon" alt="icon"/>
+                                                        <img src={vector3} className="icon" alt="icon"/>
+                                                        <img src={vector4} className="icon-progress" alt="icon"/>
+                                                    </div>
+                                                </th>
+                                                <th>
+                                                    <div className="title d-flex align-items-center">
+                                                        Avg. Holding Amount Distribution
+                                                        <img src={vector2} className="icon" alt="icon"/>
+                                                        <img src={vector3} className="icon" alt="icon"/>
+                                                        <img src={vector4} className="icon-progress" alt="icon"/>
+                                                    </div>
+                                                </th>
+                                                <th>
+                                                    <div className="title d-flex align-items-center">
+                                                        Avg. Holding Period Distribution
                                                         <img src={vector2} className="icon" alt="icon"/>
                                                         <img src={vector3} className="icon" alt="icon"/>
                                                         <img src={vector4} className="icon-progress" alt="icon"/>

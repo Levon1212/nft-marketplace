@@ -72,7 +72,7 @@ const Popup = (props) => {
                     }
                 </div>
 
-                {view === 'chart' ? <ChartType1/>  : ''}
+                {view === 'chart' ? <ChartType1 type={'single'}/>  : ''}
                 {view === 'list'  ? <PopupList1/>  : ''}
                 {view === 'table' ? <PopupTable1/> : ''}
             </div>

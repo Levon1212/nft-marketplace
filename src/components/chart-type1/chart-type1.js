@@ -16,7 +16,7 @@ import RangeSelector, {
 } from 'devextreme-react/range-selector';
 import { zoomingData } from './data';
 
-const ChartType1 = () => {
+const ChartType1 = (props) => {
     const [visualRange,setVisualRange] = useState({ startValue: 10, endValue: 880 })
     const updateRange = (e)=>{
         setVisualRange(e.value);
@@ -26,11 +26,14 @@ const ChartType1 = () => {
             <React.Fragment>
                 <Chart
                     id="zoomedChart"
-                    palette={['rgba(52, 195, 143, 0.5)']}
+                    palette={props.type === 'double' ? ['rgba(85, 110, 230, 0.5)','rgba(251, 87, 76, 0.5)'] : ['rgba(52, 195, 143, 0.5)']}
                     dataSource={zoomingData}
                 >
                     <Size height={300} />
                     <Series argumentField="arg" valueField="y1" />
+                    {
+                        props.type === 'double' ? <Series argumentField="arg" valueField="y2" /> : ''
+                    }
                     <ArgumentAxis visualRange={visualRange} />
                     <Legend visible={false} />
                     <CommonSeriesSettings>
