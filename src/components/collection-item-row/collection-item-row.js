@@ -42,11 +42,11 @@ const CollectionItemRow = (props) => {
             <td>
                 <div className="d-flex align-items-center">
                     <div className="d-flex flex-column align-items-end">
-                        <div className="title">
+                        <div className="title" >
                             <img src={vector1} alt="vector"
                                  onClick={()=>{setOpenPopupMain(true)}}
                                  className="mx-2"/>
-                            <span>{props.data.number}</span>
+                            <span onClick={()=>{setOpenPopupMain(true)}}>{props.data.number}</span>
                             {openPopupMain ? <Popup setOpenPopupMain={setOpenPopupMain}/> : ''}
                         </div>
                         <div className="date mt-2">${props.data.value}</div>
