@@ -1175,38 +1175,33 @@ button {
   border-bottom: 1px solid #E5E5E5;
   margin-bottom: 22px;
   background-color: #FFFFFF;
+  position: relative;
+  z-index: 9999999;
 }
-.statistic-header .item {
-  font-family: "PoppinsSemiBold", sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 21px;
-  letter-spacing: -0.02em;
-  color: #333333;
-  margin-right: 32px;
+.statistic-header .left-side {
+  display: flex;
+  justify-content: space-between;
 }
-.statistic-header .item span {
-  font-family: "PoppinsRegular", sans-serif;
+.statistic-header .left-side .value {
+  font-family: "PoppinsMedium", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 21px;
   letter-spacing: -0.02em;
-  color: #556EE6;
+  color: #666666;
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+}
+.statistic-header .left-side .value svg {
+  margin-right: 3px;
+}
+.statistic-header .right-side {
+  display: flex;
 }
 
-.header {
-  padding: 17px 0;
-  position: relative;
-  z-index: 99999999999;
-  background-color: #FFFFFF;
-}
-.header .main-container {
-  display: flex;
-  flex-wrap: wrap;
-}
-.header .logo {
+.logo {
   font-family: "InterBold", sans-serif;
   font-style: normal;
   font-weight: 900;
@@ -1221,7 +1216,8 @@ button {
   white-space: nowrap;
   cursor: pointer;
 }
-.header .lang {
+
+.lang {
   font-family: "PoppinsRegular", sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -1234,10 +1230,11 @@ button {
   position: relative;
   cursor: pointer;
 }
-.header .lang img {
+.lang img {
   margin-left: 10px;
 }
-.header .loginButton {
+
+.loginButton {
   position: relative;
 }
 
@@ -1302,6 +1299,16 @@ button {
 
 .dark-mode-button {
   cursor: pointer;
+}
+
+.header {
+  padding: 17px 0;
+  position: relative;
+  z-index: 99999999999;
+  background-color: #FFFFFF;
+}
+.header .main-container {
+  display: flex;
 }
 
 .footer {
@@ -1660,7 +1667,6 @@ button {
   max-width: 657px;
   position: relative;
   padding-right: 38px;
-  min-width: 534px;
 }
 .search div:first-child {
   display: flex;
@@ -2978,6 +2984,84 @@ button {
   background: rgba(242, 245, 250, 0.5);
 }
 
+.header-nav {
+  display: flex;
+  align-items: center;
+  padding: 7px;
+  border: 1px solid #556EE6;
+  border-radius: 5px;
+}
+.header-nav .value {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  border-right: 1px solid #CDD2E1;
+  height: 28px;
+  cursor: pointer;
+  position: relative;
+}
+.header-nav .value:last-child {
+  border-right: none;
+}
+.header-nav .value.active .title {
+  background: linear-gradient(92.62deg, #556EE6 3.06%, #FF00CC 36.35%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.header-nav .value.active .wrapperValue path {
+  stroke: #556EE6;
+}
+.header-nav .value .title {
+  font-family: "PoppinsSemiBold", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: -0.02em;
+  color: #A1A1A1;
+  order: 0;
+  flex-grow: 0;
+}
+
+.nav-dropdown {
+  display: flex;
+  width: 213px;
+  background: #FFFFFF;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  flex-direction: column;
+}
+.nav-dropdown .dropdown-value {
+  display: flex;
+  align-items: center;
+  height: 41px;
+  padding-left: 15px;
+}
+.nav-dropdown .dropdown-value:hover {
+  background-color: #EFF2F5;
+}
+.nav-dropdown .dropdown-value:hover p {
+  color: #556EE6;
+}
+.nav-dropdown .dropdown-value:hover path {
+  fill: #556EE6;
+}
+.nav-dropdown .dropdown-value svg {
+  margin-right: 10px;
+}
+.nav-dropdown .dropdown-value p {
+  font-family: "PoppinsMedium", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: -0.02em;
+  color: #666666;
+}
+
 .collections-page {
   position: relative;
   z-index: 7;
@@ -3000,7 +3084,13 @@ button {
   line-height: 36px;
   letter-spacing: -0.02em;
   color: #333333;
+  margin-bottom: 4px;
   position: relative;
+}
+.collections-page .title .gradientText {
+  background: linear-gradient(92.62deg, #556EE6 3.06%, #FF00CC 36.35%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .collections-page img {
   cursor: pointer;

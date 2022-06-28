@@ -1,10 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import moon from '../../assets/images/icons/moon.svg'
-import vectorDown from '../../assets/images/icons/vector-down.svg'
+
 import settingsIcon from '../../assets/images/icons/settings-icon.svg'
-import OutsideClickHandler from 'react-outside-click-handler';
 import Search from "../search";
-import LoginPopup from "../login-popup";
+import HeaderNav from "./header-nav";
 
 const Header = () => {
     const [langPopup,setLangPopup] = useState(false);
@@ -21,49 +19,8 @@ const Header = () => {
                     NFT Marketplace
                 </div>
                 <Search/>
-                <img src={moon} alt="moon icon"
-                     className='dark-mode-button'/>
-                <div className="lang d-flex" onClick={()=>setLangPopup(true)}>
-                    {lang}
-                    <OutsideClickHandler onOutsideClick={() => {setLangPopup(false)}}>
-                        {
-                            langPopup ? <div className="langSelect customScrollbar" onClick={()=>{setLangPopup(false)}}>
-                                <input type="text" placeholder='Search'/>
-                                <div className="subTitle">Popular languages</div>
-                                <div className="item" onClick={()=>{setLang('EN')}}>English <span>EN</span></div>
-                                <div className="item" onClick={()=>{setLang('RU')}}>Russian <span>RU</span></div>
-                                <div className="subTitle">All languages</div>
-                                <div className="item" onClick={()=>{setLang('EN')}}>English <span>EN</span></div>
-                                <div className="item" onClick={()=>{setLang('RU')}}>Russian <span>RU</span></div>
-                                <div className="item" onClick={()=>{setLang('EN')}}>English <span>EN</span></div>
-                                <div className="item" onClick={()=>{setLang('RU')}}>Russian <span>RU</span></div>
-                                <div className="item" onClick={()=>{setLang('EN')}}>English <span>EN</span></div>
-                                <div className="item" onClick={()=>{setLang('RU')}}>Russian <span>RU</span></div>
-                                <div className="item" onClick={()=>{setLang('EN')}}>English <span>EN</span></div>
-                                <div className="item" onClick={()=>{setLang('RU')}}>Russian <span>RU</span></div>
-                                <div className="item" onClick={()=>{setLang('EN')}}>English <span>EN</span></div>
-                                <div className="item" onClick={()=>{setLang('RU')}}>Russian <span>RU</span></div>
-                                <div className="item" onClick={()=>{setLang('EN')}}>English <span>EN</span></div>
-                                <div className="item" onClick={()=>{setLang('RU')}}>Russian <span>RU</span></div>
-                                <div className="item" onClick={()=>{setLang('EN')}}>English <span>EN</span></div>
-                                <div className="item" onClick={()=>{setLang('RU')}}>Russian <span>RU</span></div>
-                            </div> : ''
-                        }
+                <HeaderNav/>
 
-                    </OutsideClickHandler>
-                    <img src={vectorDown} alt=""/>
-                </div>
-
-                <div className="lang">
-                    USD
-                </div>
-                <img src={vectorDown} alt=""/>
-                <div className="lang loginButton" >
-                    <span onClick={()=> {
-                        setLoginPopUpOpen(true)
-                    }}>Login</span>
-                    {loginPopUpOpen ? <LoginPopup setLoginPopUpOpen={setLoginPopUpOpen}/> : ''}
-                </div>
                 <div className="subscribe-button">
                     Subscribe
                 </div>

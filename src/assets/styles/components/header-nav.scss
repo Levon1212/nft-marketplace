@@ -1,0 +1,43 @@
+.header-nav{
+  display: flex;
+  align-items: center;
+  padding: 7px;
+  border:1px solid #556EE6;
+  border-radius: 5px;
+  .value{
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    border-right: 1px solid #CDD2E1;
+    height: 28px;
+    cursor: pointer;
+    position: relative;
+    &:last-child{
+      border-right: none;
+    }
+    &.active{
+      .title{
+        background: linear-gradient(92.62deg, #556EE6 3.06%, #FF00CC 36.35%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .wrapperValue{
+        path{
+          stroke: #556EE6;
+        }
+      }
+
+    }
+    .title{
+      font-family: 'PoppinsSemiBold',sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 21px;
+      letter-spacing: -0.02em;
+      color: #A1A1A1;
+      order: 0;
+      flex-grow: 0;
+    }
+  }
+}

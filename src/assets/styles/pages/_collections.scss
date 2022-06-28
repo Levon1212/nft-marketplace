@@ -19,8 +19,13 @@
     line-height: 36px;
     letter-spacing: -0.02em;
     color: #333333;
-    //margin-bottom: 4px;
+    margin-bottom: 4px;
     position: relative;
+    .gradientText{
+      background: linear-gradient(92.62deg, #556EE6 3.06%, #FF00CC 36.35%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
   }
   img{
     cursor: pointer;

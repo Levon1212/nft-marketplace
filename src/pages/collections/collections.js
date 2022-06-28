@@ -95,13 +95,12 @@ const Collections = () => {
             <StatisticHeader/>
             <div className="main-container">
                 <p className='title'>
-                    Tracking  50,000+ NFT Collections from 15 Platforms and 1,000,000+ Wallets
+                    <span className='gradientText'>Trending</span> NFT Collections by Sales
                 </p>
             </div>
             <div className="main-container">
                 <p className='subTitle'>
                     100+ Filters, 100+ Alerts, Monitor Twitter, Instagram, Discord, BlockChain and more for each Collection & Wallet
-                    <span>Read more</span>
                 </p>
             </div>
             <div className="main-container filterContainer">
@@ -135,22 +134,22 @@ const Collections = () => {
                     Clear All Filters
                 </div>
             </div>
-            <div className="main-container my-3 align-items-center with-datepicker">
-                <TimeButtons/>
-                <DatePicker className="date-picker-label"
-                            selected={startDate}
-                            dateFormat="MMM dd"
-                            onChange={(date) => setStartDate(date)} />
-            </div>
-            <div className="main-container">
+            {/*<div className="main-container my-3 align-items-center with-datepicker">*/}
+                {/*<TimeButtons/>*/}
+                {/*<DatePicker className="date-picker-label"*/}
+                {/*            selected={startDate}*/}
+                {/*            dateFormat="MMM dd"*/}
+                {/*            onChange={(date) => setStartDate(date)} />*/}
+            {/*</div>*/}
+            <div className="main-container mt-3">
                 <div className="filter-button">
                     <img src={starIcon} className='icon' alt="star icon"/>
                     Watchlist
                 </div>
-                <div className="filter-button">
-                    <img src={timeIcon} className='icon' alt="star icon"/>
-                    Recently Added
-                </div>
+                {/*<div className="filter-button">*/}
+                {/*    <img src={timeIcon} className='icon' alt="star icon"/>*/}
+                {/*    Recently Added*/}
+                {/*</div>*/}
                 <div className="filter-button">
                     <img src={categoryIcon} className='icon' alt="star icon"/>
                     Categories
@@ -159,41 +158,41 @@ const Collections = () => {
                     <img src={platformIcon} className='icon' alt="star icon"/>
                     Platform
                 </div>
-                <div className="d-flex position-relative">
-                    <div className="filter-button" onMouseUp={()=>{setComparePopupOpen(true)}}>
-                        <img src={compareIcon} className='icon' alt="star icon"/>
-                        Compare
-                    </div>
-                    {comparePopupOpen ? <ComparePopup setCompareHoldersOpen={setCompareHoldersOpen}  closeHandle={setComparePopupOpen} /> : ''}
-                </div>
+                {/*<div className="d-flex position-relative">*/}
+                {/*    <div className="filter-button" onMouseUp={()=>{setComparePopupOpen(true)}}>*/}
+                {/*        <img src={compareIcon} className='icon' alt="star icon"/>*/}
+                {/*        Compare*/}
+                {/*    </div>*/}
+                {/*    {comparePopupOpen ? <ComparePopup setCompareHoldersOpen={setCompareHoldersOpen}  closeHandle={setComparePopupOpen} /> : ''}*/}
+                {/*</div>*/}
 
             </div>
-            <div className="main-container mt-2">
-                <div className="filter-button info">
-                    <img src={mintingIcon} className='icon' alt="star icon"/>
-                    Minting Now
-                    <div className="info-container info-popover">
-                        <Popover/>
-                        <img src={vector3} alt="minting icon"/>
-                    </div>
-                </div>
-                <div className="filter-button info">
-                    <img src={newMinths} className='icon' alt="star icon"/>
-                    New Mints
-                    <div className="info-container info-popover">
-                        <Popover/>
-                        <img src={vector3} alt="minting icon"/>
-                    </div>
-                </div>
-                <div className="filter-button info">
-                    <img src={nextCheap} className='icon' alt="star icon"/>
-                    Next Blue Chip
-                    <div className="info-container info-popover">
-                        <Popover/>
-                        <img src={vector3} alt="minting icon"/>
-                    </div>
-                </div>
-            </div>
+            {/*<div className="main-container mt-2">*/}
+            {/*    <div className="filter-button info">*/}
+            {/*        <img src={mintingIcon} className='icon' alt="star icon"/>*/}
+            {/*        Minting Now*/}
+            {/*        <div className="info-container info-popover">*/}
+            {/*            <Popover/>*/}
+            {/*            <img src={vector3} alt="minting icon"/>*/}
+            {/*        </div>*/}
+            {/*    </div>*/}
+            {/*    <div className="filter-button info">*/}
+            {/*        <img src={newMinths} className='icon' alt="star icon"/>*/}
+            {/*        New Mints*/}
+            {/*        <div className="info-container info-popover">*/}
+            {/*            <Popover/>*/}
+            {/*            <img src={vector3} alt="minting icon"/>*/}
+            {/*        </div>*/}
+            {/*    </div>*/}
+            {/*    <div className="filter-button info">*/}
+            {/*        <img src={nextCheap} className='icon' alt="star icon"/>*/}
+            {/*        Next Blue Chip*/}
+            {/*        <div className="info-container info-popover">*/}
+            {/*            <Popover/>*/}
+            {/*            <img src={vector3} alt="minting icon"/>*/}
+            {/*        </div>*/}
+            {/*    </div>*/}
+            {/*</div>*/}
             <TabsMain/>
             {
                 compareHoldersOpen ? <CompareHolders/> : ''
