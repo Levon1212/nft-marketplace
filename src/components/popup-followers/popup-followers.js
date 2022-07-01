@@ -13,7 +13,7 @@ const PopupFollowers = (props) => {
 
     return (
         <div className='popup'>
-            <img src={xIcon} alt="close icon" className='closeIcon'
+            <img src={xIcon} alt="close icon" className='closeIcon' onClick={()=>{props.setPopupFollowers(false)}}
                  />
             <div className="wrapper">
                 <div className="followers-home-content">

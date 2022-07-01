@@ -62,7 +62,8 @@
   }
 }
 .filterContainer{
-  z-index: 1000000;
+  z-index: 99999999;
+  position: relative;
 }
 .filterContentWrapper{
   display: flex;

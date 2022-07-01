@@ -97,7 +97,7 @@
         display: flex;
         position: absolute;
         right: 27px;
-        bottom: 5px;
+        bottom: 9px;
       }
       .likesButtons{
         display: flex;
@@ -116,11 +116,27 @@
         border: 0.44186px solid #C4C4C4;
         border-radius: 1.76744px;
         cursor: pointer;
+        &.activeLike{
+          background-color: rgba(39, 174, 96, 1);
+          color: #FFFFFF;
+          border-color: rgba(39, 174, 96, 1);
+          path{
+            fill: #FFFFFF;
+          }
+        }
+        &.activeUnLike{
+          background-color: rgba(235, 87, 87, 1);
+          color: #FFFFFF;
+          border-color: rgba(235, 87, 87, 1);
+          path{
+            fill: #FFFFFF;
+          }
+        }
       }
       .icon{
         position: absolute;
         right: 7px;
-        bottom: 5px;
+        bottom: 9px;
         width: 19px;
         height: 13px;
       }

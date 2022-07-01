@@ -464,8 +464,6 @@ button {
 
 .sort-icon {
   position: relative;
-  width: 16px;
-  height: 18px;
   cursor: pointer;
 }
 .sort-icon .sort-popover-container {
@@ -631,7 +629,7 @@ button {
   display: flex;
   position: absolute;
   right: 27px;
-  bottom: 5px;
+  bottom: 9px;
 }
 .collection-table .collections .item .likesButtons {
   display: flex;
@@ -651,10 +649,26 @@ button {
   border-radius: 1.76744px;
   cursor: pointer;
 }
+.collection-table .collections .item .likesButtons.activeLike {
+  background-color: rgb(39, 174, 96);
+  color: #FFFFFF;
+  border-color: rgb(39, 174, 96);
+}
+.collection-table .collections .item .likesButtons.activeLike path {
+  fill: #FFFFFF;
+}
+.collection-table .collections .item .likesButtons.activeUnLike {
+  background-color: rgb(235, 87, 87);
+  color: #FFFFFF;
+  border-color: rgb(235, 87, 87);
+}
+.collection-table .collections .item .likesButtons.activeUnLike path {
+  fill: #FFFFFF;
+}
 .collection-table .collections .item .icon {
   position: absolute;
   right: 7px;
-  bottom: 5px;
+  bottom: 9px;
   width: 19px;
   height: 13px;
 }
@@ -1063,52 +1077,48 @@ button {
   margin-bottom: 28px;
   margin-top: 17px;
   padding: 0 10px;
+  position: relative;
+  z-index: 99999;
+  flex-direction: column;
 }
-.tabs-main .content {
+.tabs-main .tabs-container {
   display: flex;
-  width: 100%;
-  border-bottom: 1px solid rgb(196, 196, 196);
   justify-content: space-between;
 }
-.tabs-main .content .tabs {
+.tabs-main .tabs-container .left-side {
   display: flex;
-  width: fit-content;
+  align-items: center;
 }
-.tabs-main .content .tabs .item {
+.tabs-main .tabs-container .left-side .timeButtonsContainer {
+  display: flex;
+  align-items: center;
+}
+.tabs-main .tabs-container .left-side .timeButtonsContainer .timeValues {
+  width: 41.4px;
+  height: 35.85px;
+  top: 0;
+  border-radius: 2px;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 152px;
-  height: 46px;
-  font-family: "PoppinsRegular", sans-serif;
+  font-family: "PoppinsMedium", sans-serif;
   font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 21px;
-  letter-spacing: -0.02em;
-  color: #666666;
-  margin-bottom: 1px;
-  border-radius: 4px;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 15px;
+  color: #556EE6;
   cursor: pointer;
-  transition: 0.5s;
 }
-.tabs-main .content .tabs .item.active {
-  background-color: rgb(85, 110, 230);
-  color: #ffffff;
+.tabs-main .tabs-container .left-side .timeButtonsContainer .timeValues.active {
+  background-color: #556EE6;
+  color: #FFFFFF;
 }
-.tabs-main .content .tabs .item.active:hover {
-  background-color: rgb(33, 51, 140);
-  color: #ffffff;
-}
-.tabs-main .content .tabs .item img {
-  margin-right: 12px;
-}
-.tabs-main .content .filter {
+.tabs-main .tabs-container .viewButton {
   display: flex;
-  width: fit-content;
+  justify-content: center;
   align-items: center;
-}
-.tabs-main .content .filter .label {
+  width: 100px;
+  height: 37px;
   font-family: "PoppinsRegular", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -1116,55 +1126,159 @@ button {
   line-height: 21px;
   letter-spacing: -0.02em;
   color: #666666;
-  margin-bottom: 0;
-  margin-right: 11px;
-}
-.tabs-main .content .filter .select {
-  margin-right: 9px;
+  border-right: 1px solid #C6C6C6;
+  border-top: 1px solid #C6C6C6;
+  border-left: 1px solid #C6C6C6;
+  background-color: #FFFFFF;
   position: relative;
-  top: 3px;
+  top: 12px;
 }
-.tabs-main .content .filter .select .MuiSvgIcon-root {
-  right: 3px;
-  top: calc(50% - 13px);
-}
-.tabs-main .content .filter .select legend {
-  display: none;
-}
-.tabs-main .content .filter .select .MuiBox-root {
-  min-width: 50px;
-}
-.tabs-main .content .filter .select .MuiBox-root .MuiSelect-select {
-  padding: 2.5px 7px;
-  font-family: "PoppinsSemiBold", sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 21px;
-  letter-spacing: -0.02em;
-  color: #666666;
-}
-.tabs-main .content .filter .select .MuiBox-root .MuiSelect-select legend {
-  display: none !important;
-}
-.tabs-main .content .filter .customiseButton {
+.tabs-main .tabs-container .right-side {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+}
+.tabs-main .tabs-container .right-side .customiseButton {
   width: 122px;
   height: 30px;
+  border: 1px solid #CDD2E1;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: "PoppinsRegular", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 21px;
   letter-spacing: -0.02em;
   color: #666666;
+}
+.tabs-main .tabs-container .right-side .indicatorsContainer {
+  display: flex;
+  align-items: center;
+}
+.tabs-main .tabs-container .right-side .indicatorsContainer .chartSwitchButton {
+  width: 30.3px;
+  height: 30px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "PoppinsMedium", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  background: #F9FBFD;
+  border: 1px solid #CDD2E1;
+}
+.tabs-main .tabs-container .right-side .indicatorsContainer .chartSwitchButton.active {
+  background-color: #556EE6;
+  border: 1px solid #556EE6;
+}
+.tabs-main .tabs-container .right-side .indicatorsContainer .chartSwitchButton.active svg path {
+  stroke: #FFFFFF;
+}
+.tabs-main .tabs-container .right-side .indicatorsContainer .sortButtonsTubs {
+  width: 30.3px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "PoppinsMedium", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 21px;
+  background: #FFFFFF;
+  border: 1px solid #CDD2E1;
+}
+.tabs-main .tabs-container .right-side .indicatorsContainer .sortButtonsTubs.active {
+  background-color: rgb(85, 110, 230);
+  color: #FFFFFF;
+}
+.tabs-main .tabs-container .right-side .indicatorsContainer .sortButtonsTubs:nth-child(2) {
+  border-radius: 4px 0 0 4px;
+  border-right: none;
+}
+.tabs-main .tabs-container .right-side .indicatorsContainer .sortButtonsTubs:nth-child(3) {
+  border-radius: 0 4px 4px 0;
+  border-left: none;
+}
+.tabs-main .tabs-container .right-side .indicatorsContainer p {
+  font-family: "PoppinsMedium", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: #555B6D;
+  margin: 0 5px;
+}
+.tabs-main .tabsView {
+  display: flex;
+  height: 200px;
+  border-top: 1px solid #C6C6C6;
+  margin-top: 11px;
+}
+.tabs-main .tabsView .parts {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 25%;
+}
+.tabs-main .tabsView .parts .title {
+  font-family: "PoppinsMedium", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: #A1A1A1;
+  margin-top: 13px;
+  width: fit-content;
+}
+.tabs-main .tabsView .parts .buttonsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+.tabs-main .tabsView .parts .buttonsContainer .tabsButtons {
+  width: 128px;
+  height: 30px;
+  background: #F0F6FF;
   border: 1px solid #CDD2E1;
   border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "PoppinsRegular", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: -0.02em;
+  color: #666666;
+  margin-top: 9px;
+  margin-right: 7px;
 }
-.tabs-main .content .filter .customiseButton img {
-  margin-right: 9px;
+.tabs-main .tabsView .parts .buttonsContainer .tabsButtons svg {
+  margin-right: 13px;
+}
+.tabs-main .tabsView .collectionPart {
+  max-width: 33.3333333333%;
+}
+.tabs-main .tabsView .nftsPart {
+  max-width: 135px;
+}
+.tabs-main .tabsView .walletsPart {
+  align-items: flex-end;
+  max-width: 33.3333333333%;
+}
+.tabs-main .tabsView .walletsPart .titleWallets {
+  width: 407px !important;
+}
+.tabs-main .tabsView .walletsPart .buttonsContainer {
+  justify-content: flex-end;
 }
 
 .statistic-header {
@@ -1846,6 +1960,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  top: 1px;
 }
 .info-popover:hover .popoverContainer {
   display: flex;
@@ -2118,7 +2233,8 @@ button {
 }
 
 .filterContainer {
-  z-index: 1000000;
+  z-index: 99999999;
+  position: relative;
 }
 
 .filterContentWrapper {
@@ -2988,7 +3104,6 @@ button {
   display: flex;
   align-items: center;
   padding: 7px;
-  border: 1px solid #556EE6;
   border-radius: 5px;
 }
 .header-nav .value {

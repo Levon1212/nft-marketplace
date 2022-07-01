@@ -6,50 +6,73 @@
   margin-bottom: 28px;
   margin-top: 17px;
   padding: 0 10px;
-  .content{
+  position: relative;
+  z-index: 99999;
+  flex-direction: column;
+  .tabs-container{
     display: flex;
-    width: 100%;
-    border-bottom: 1px solid rgba(196, 196, 196, 1);
     justify-content: space-between;
-    .tabs{
-      display: flex;
-      width: fit-content;
-      .item{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 152px;
-        height: 46px;
-        font-family: 'PoppinsRegular',sans-serif;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 21px;
-        letter-spacing: -0.02em;
-        color: #666666;
-        margin-bottom: 1px;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: 0.5s;
-        &.active{
-          background-color: rgba(85, 110, 230, 1);
-          color: #ffffff;
-          &:hover{
-            background-color: rgb(33, 51, 140);
-            color: #ffffff;
-          }
-        }
 
-        img{
-          margin-right: 12px;
+    .left-side{
+      display: flex;
+      align-items: center;
+      .timeButtonsContainer{
+        display: flex;
+        align-items: center;
+        .timeValues{
+          width: 41.4px;
+          height: 35.85px;
+          top: 0;
+          border-radius: 2px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-family: 'PoppinsMedium',sans-serif;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 10px;
+          line-height: 15px;
+          color: #556EE6;
+          cursor: pointer;
+          &.active{
+            background-color: #556EE6;
+            color: #FFFFFF;
+          }
         }
       }
     }
-    .filter{
+    .viewButton{
       display: flex;
-      width: fit-content;
+      justify-content: center;
       align-items: center;
-      .label{
+      width: 100px;
+      height: 37px;
+      font-family: 'PoppinsRegular',sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 21px;
+      letter-spacing: -0.02em;
+      color: #666666;
+      border-right: 1px solid #C6C6C6;
+      border-top: 1px solid #C6C6C6;
+      border-left: 1px solid #C6C6C6;
+      background-color: #FFFFFF;
+      position: relative;
+      top: 12px;
+    }
+    .right-side{
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      .customiseButton{
+        width: 122px;
+        height: 30px;
+        border: 1px solid #CDD2E1;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         font-family: 'PoppinsRegular',sans-serif;
         font-style: normal;
         font-weight: 400;
@@ -57,56 +80,136 @@
         line-height: 21px;
         letter-spacing: -0.02em;
         color: #666666;
-        margin-bottom: 0;
-        margin-right: 11px;
       }
-      .select{
-        margin-right: 9px;
-        position: relative;
-        top: 3px;
-        .MuiSvgIcon-root{
-          right: 3px;
-          top: calc(50% - 13px);
-        }
-        legend{
-          display: none;
-        }
-        .MuiBox-root{
-          min-width: 50px;
-          .MuiSelect-select{
-            padding: 2.5px 7px;
-            font-family: 'PoppinsSemiBold',sans-serif;
-            font-style: normal;
-            font-weight: 600;
-            font-size: 14px;
-            line-height: 21px;
-            letter-spacing: -0.02em;
-            color: #666666;
-            legend{
-              display: none !important;
+      .indicatorsContainer{
+        display: flex;
+        align-items: center;
+        .chartSwitchButton{
+          width: 30.3px;
+          height: 30px;
+          border-radius: 4px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-family: 'PoppinsMedium',sans-serif;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 21px;
+          background: #F9FBFD;
+          border: 1px solid #CDD2E1;
+          &.active{
+            background-color: #556EE6;
+            border: 1px solid #556EE6;
+            svg{
+              path{
+                stroke: #FFFFFF;
+              }
             }
           }
         }
-      }
-      .customiseButton{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 122px;
-        height: 30px;
-        font-family: 'PoppinsRegular',sans-serif;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 13px;
-        line-height: 21px;
-        letter-spacing: -0.02em;
-        color: #666666;
-        border: 1px solid #CDD2E1;
-        border-radius: 4px;
-        img{
-          margin-right: 9px;
+        .sortButtonsTubs{
+          width: 30.3px;
+          height: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-family: 'PoppinsMedium',sans-serif;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 21px;
+          background: #FFFFFF;
+          border: 1px solid #CDD2E1;
+          &.active{
+            background-color: rgba(85, 110, 230, 1);
+            color: #FFFFFF;
+          }
+          &:nth-child(2){
+            border-radius: 4px 0 0 4px;
+            border-right: none;
+          }
+          &:nth-child(3){
+            border-radius: 0 4px 4px 0;
+            border-left: none;
+          }
+        }
+        p{
+          font-family: 'PoppinsMedium',sans-serif;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 21px;
+          color: #555B6D;
+          margin: 0 5px;
         }
       }
+    }
+  }
+  .tabsView{
+    display: flex;
+    height: 200px;
+    border-top: 1px solid #C6C6C6;
+    margin-top: 11px;
+    .parts{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: calc(100% / 4);
+      .title{
+        font-family: 'PoppinsMedium',sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 21px;
+        color: #A1A1A1;
+        margin-top: 13px;
+        width: fit-content;
+      }
+      .buttonsContainer{
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 12px;
+        .tabsButtons{
+          width: 128px;
+          height: 30px;
+          background: #F0F6FF;
+          border: 1px solid #CDD2E1;
+          border-radius: 4px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-family: 'PoppinsRegular',sans-serif;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 21px;
+          letter-spacing: -0.02em;
+          color: #666666;
+          margin-top: 9px;
+          margin-right: 7px;
+          svg{
+            margin-right: 13px;
+          }
+        }
+      }
+    }
+    .collectionPart{
+      max-width: calc(100% / 3);
+    }
+    .nftsPart{
+      max-width: 135px;
+    }
+    .walletsPart{
+      align-items: flex-end;
+      max-width: calc(100% / 3);
+      .titleWallets{
+        width: 407px !important;
+      }
+      .buttonsContainer{
+        justify-content: flex-end;
+      }
+
     }
   }
 }
