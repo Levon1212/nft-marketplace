@@ -1,13 +1,16 @@
-import React,{useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import DatePicker from "react-datepicker";
 
-const TabsMain = () => {
+const TabsMain = (props) => {
     const [time,setTime] = useState('5')
     const [startDate, setStartDate] = useState(new Date())
     const [open, setOpen] = useState(false)
     const [chartSwitch,setChartSwitch] = useState(false)
     const [sortType,setSortType] = useState('1')
     const [viewOpen,setViewOpen] = useState(false)
+    useEffect(()=>{
+        props.setTableChart(chartSwitch);
+    },[chartSwitch])
     return (
         <div className='tabs-main'>
             <div className="tabs-container">

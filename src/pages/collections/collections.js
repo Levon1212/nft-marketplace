@@ -160,7 +160,7 @@ const Collections = () => {
                 {/*</div>*/}
 
             </div>
-            <TabsMain setValue={setValue}/>
+            <TabsMain setTableChart={setTableChart} tableChart={tableChart} setValue={setValue}/>
             {
                 compareHoldersOpen ? <CompareHolders/> : ''
             }

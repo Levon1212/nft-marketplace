@@ -55,6 +55,7 @@
     border: 1px solid #EEF3F6;
     border-radius: 4px;
     padding-top: 18px;
+    min-width: 657px;
     .searchTitle{
       font-family: 'PoppinsRegular',sans-serif;
       font-style: normal;
@@ -184,7 +185,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 1px;
   &:hover .popoverContainer{
     display: flex;
   }

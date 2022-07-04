@@ -338,7 +338,14 @@ button{
     background-color: #556EE6;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     border-radius: 100px;
-    color: #FFFFFF;
+    color: #FFFFFF !important;
+
+  }
+  .react-datepicker__day--keyboard-selected{
+    background-color: #556EE6;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 100px;
+    color: #FFFFFF !important;
   }
   .react-datepicker__day{
     display: inline-block;

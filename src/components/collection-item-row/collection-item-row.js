@@ -17,7 +17,7 @@ const CollectionItemRow = (props) => {
         <tr>
             <td>
                 <div className="number position-relative" >
-                    <span onClick={()=>setPlatformPopupOpen(true)}>20</span>
+                    <span className='numberTextWrapper'  onClick={()=>setPlatformPopupOpen(true)}>20</span>
                     {platformPopupOpen
                         ?
                         <OutsideClickHandler onOutsideClick={() => {setPlatformPopupOpen(false)}}>
@@ -32,26 +32,24 @@ const CollectionItemRow = (props) => {
                 <div className="date">02-15-2022</div>
             </td>
             <td className="text-nowrap text-center">
-                {
-                     <SmallChart show={props.chart === 'floor' ? true : false}/>
-                }
-                <div className={props.chart === 'floor' ? "d-none" : ''}>
+                <SmallChart show={props.chart}/>
+                <div className={props.chart ? "d-none" : ''}>
                     ---
                 </div>
             </td>
             <td>
-                <div className="d-flex align-items-center">
+                <div className="d-flex align-items-center cursor-pointer">
                     <div className="d-flex flex-column align-items-end">
                         <div className="title" >
                             <img src={vector1} alt="vector"
                                  onClick={()=>{setOpenPopupMain(true)}}
-                                 className="mx-2"/>
-                            <span onClick={()=>{setOpenPopupMain(true)}}>{props.data.number}</span>
+                                 className="mx-2 cursor-pointer"/>
+                            <span className='cursor-pointer' onClick={()=>{setOpenPopupMain(true)}}>{props.data.number}</span>
                             {openPopupMain ? <Popup setOpenPopupMain={setOpenPopupMain}/> : ''}
                         </div>
-                        <div className="date mt-2">${props.data.value}</div>
+                        <div className="date mt-2 cursor-pointer" onClick={()=>{setOpenPopupMain(true)}}>${props.data.value}</div>
                     </div>
-                    <div className="progress-up">
+                    <div className="progress-up cursor-pointer" onClick={()=>{setOpenPopupMain(true)}}>
                         {props.data.percent}%
                     </div>
                 </div>
@@ -179,7 +177,7 @@ const CollectionItemRow = (props) => {
             <td>
                 <div className="d-flex justify-content-center cursor-pointer position-relative">
                     <div className="title" onClick={()=>{setPopupFollowers(true)}}>4514</div>
-                    <div className="progress-up" onClick={()=>{setPopupFollowers(true)}}>1.01%</div>
+                    <div className="progress-up cursor-pointer" onClick={()=>{setPopupFollowers(true)}}>1.01%</div>
                     {popupFollowers ? <PopupFollowers setPopupFollowers={setPopupFollowers}/> : ''}
                 </div>
             </td>
