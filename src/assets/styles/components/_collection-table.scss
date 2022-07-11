@@ -33,6 +33,9 @@
         width: 100%;
         height: 28px;
         background-color: #ffffff;
+        .svg-icon{
+
+        }
         img{
           width: 11px;
           height: 11px;
@@ -48,6 +51,7 @@
           letter-spacing: -0.02em;
           color: #333333;
           margin-left: 25px;
+          margin-bottom: 0;
           &.icon{
             margin-left: 51px;
           }

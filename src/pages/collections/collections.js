@@ -170,7 +170,6 @@ const Collections = () => {
                        <div className="contentHeader">
                            <div className="title ml-5 icon">#</div>
                            <div className="title">Collection</div>
-                           <img src={vector3} alt="icon"/>
                            <p className="date">Date Added</p>
                        </div>
                     </div>

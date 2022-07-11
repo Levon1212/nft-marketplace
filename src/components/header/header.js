@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react';
 import settingsIcon from '../../assets/images/icons/settings-icon.svg'
 import Search from "../search";
 import HeaderNav from "./header-nav";
+import LoginPopup from "../login-popup";
 
 const Header = () => {
     const [langPopup,setLangPopup] = useState(false);
@@ -21,8 +22,9 @@ const Header = () => {
                 <Search/>
                 <HeaderNav/>
 
-                <div className="subscribe-button">
-                    Subscribe
+                <div className="subscribe-button" >
+                    <span onClick={()=>setLoginPopUpOpen(true)}>Subscribe</span>
+                    {loginPopUpOpen ? <LoginPopup setLoginPopUpOpen={setLoginPopUpOpen}/> : ''}
                 </div>
                 <div className="alerts-button">
                     <img src={settingsIcon} alt=""/>
